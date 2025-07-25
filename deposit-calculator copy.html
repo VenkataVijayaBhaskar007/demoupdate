@@ -1,0 +1,1760 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eluri Co-Operative Urban Bank</title>
+    <!-- favicons Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="https://ik.imagekit.io/eluribank/assets/images/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://ik.imagekit.io/eluribank/assets/images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://ik.imagekit.io/eluribank/assets/images/favicons/favicon-16x16.png">
+    <meta name="description" content="Pylon Loan HTML Template">
+
+    <!-- fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/css/swiper.min.css">
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <link rel="stylesheet" href="assets/css/pylon-icons.css">
+    <link rel="stylesheet" href="assets/css/odometer.min.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="assets/css/nouislider.min.css">
+    <link rel="stylesheet" href="assets/css/nouislider.pips.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/flaticon.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.0/nouislider.min.css" />
+
+      <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+
+  <!-- Font Awesome (for icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+    <!-- template styles -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <style>
+      /* ---------------------
+         Slider Container
+      ---------------------- */
+      .slider {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        margin: 0 auto;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+        border-radius: 0;
+      }
+      
+      /* ---------------------
+         Slides Wrapper
+      ---------------------- */
+      .slides {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        transition: transform 0.8s ease;
+      }
+      
+      .slide {
+        flex: 0 0 100%;
+        width: 100%;
+        height: 100%;
+      }
+      
+      .slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      
+      /* ---------------------
+         Navigation Buttons
+      ---------------------- */
+      .nav-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: #7d0000;
+        color: white;
+        border: none;
+        font-size: 18px;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        z-index: 10;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .prev {
+        left: 10px;
+      }
+      
+      .next {
+        right: 10px;
+      }
+      
+      .nav-btn::before {
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        font-size: 16px;
+        color: #fff;
+      }
+      
+      .prev::before {
+        content: "\f104"; /* Chevron-left */
+      }
+      
+      .next::before {
+        content: "\f105"; /* Chevron-right */
+      }
+      
+      /* ---------------------
+         Dots Navigation
+      ---------------------- */
+      .dots {
+        text-align: center;
+        position: absolute;
+        bottom: 15px;
+        width: 100%;
+      }
+      
+      .dot {
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        margin: 0 5px;
+        background-color: rgba(125, 0, 0, 0.3);
+        border-radius: 50%;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+      
+      .dot.active {
+        background-color: #7d0000;
+      }
+      
+      /* ---------------------
+         Swiper Buttons
+      ---------------------- */
+      .swiper-button-next,
+      .swiper-button-prev {
+        width: 40px;
+        height: 40px;
+        background-color: #7d0000;
+        border-radius: 50%;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        top: 55%;
+        margin-top: -3rem;
+        border: 2px solid white;
+        transform: translateY(-50%);
+        z-index: 9999;
+        position: absolute;
+      }
+      
+      .swiper-button-next::after,
+      .swiper-button-prev::after {
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        font-size: 16px;
+        color: #fff;
+      }
+      
+      .swiper-button-next::after {
+        content: "\f105";
+      }
+      
+      .swiper-button-prev::after {
+        content: "\f104";
+      }
+      
+      .swiper-pagination {
+        z-index: 9999 !important;
+        position: relative;
+      }
+      
+      .swiper-pagination-bullet {
+        width: 10px;
+        height: 10px;
+        background: #ddd;
+        opacity: 1;
+        margin: 0 5px;
+        border-radius: 50%;
+      }
+      
+      .swiper-pagination-bullet-active {
+        background: #7d0000;
+      }
+      
+      /* ---------------------
+         Responsive: Below 700px
+      ---------------------- */
+      @media (max-width: 700px) {
+        .taggbox {
+          width: 140px !important;
+          height: 140px !important;
+        }
+      
+        .nav-btn {
+          width: 20px;
+          border-radius: 50%;
+          height: 20px;
+          font-size: 12px;
+        }
+      
+        .nav-btn::before {
+          font-size: 10px;
+        }
+      
+        .swiper-button-next,
+        .swiper-button-prev {
+          width: 20px;
+          height: 20px;
+          font-size: 10px;
+          border: 1px solid white;
+        }
+      
+        .swiper-button-next::after,
+        .swiper-button-prev::after {
+          font-size: 10px;
+        }
+      }
+      </style>
+      
+      
+</head>
+
+<body>
+       <div class="preloader">
+        <img class="preloader__image" src="https://ik.imagekit.io/eluribank/assets/images/loader.gif" alt=""><br>
+        <p class="preloader-text">Your Trusted Banking Partner...</p>
+      </div><!-- /.preloader -->
+
+
+<!-- popup for page -->
+<div id="dicgcPopup" class="custom-popup-overlay">
+    <div class="custom-popup-content">
+      <span class="custom-close-btn" onclick="closeDicgcPopup()">×</span>
+      <h2>Welcome To Eluri Co-operative Urban Bank Ltd.</h2>
+  
+      <div class="popup-flex-section">
+        <div class="popup-left">
+          <a href="https://www.dicgc.org.in/" target="_blank">
+            <img src="https://ik.imagekit.io/eluribank/assets/images/resources/dicgc.jpg" alt="DICGC Logo">
+          </a>
+          <p>Registered with DICGC</p>
+        </div>
+        <div class="popup-right">
+          <a href="https://www.dicgc.org.in/" target="_blank">
+            <img src="https://ik.imagekit.io/eluribank/assets/images/resources/trust-1-1.png" alt="DICGC QR Code">
+          </a>
+          <p>DICGC QR Code</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      setTimeout(() => {
+        const popup = document.getElementById('dicgcPopup');
+        if (popup) popup.style.display = 'flex';
+      }, 500);
+    });
+  
+    function closeDicgcPopup() {
+      const popup = document.getElementById('dicgcPopup');
+      if (popup) popup.style.display = 'none';
+    }
+  </script>
+  
+    
+  
+
+
+    <div class="page-wrapper">
+        <header class="main-header" >
+           
+            <nav class="main-menu"style="background-color: #fde1e0;" >
+                <div class="container" style="margin: 0px -5px;">
+                    <div class="logo-box">
+                        <div style="display: flex; align-items: center; gap: 5px;">
+                            <a href="index.html" aria-label="logo image">
+                              <img src="https://ik.imagekit.io/eluribank/assets/images/logo-light.png" width="70" alt="" style="border-radius: 10px;">
+                            </a>
+                            <a href="index.html" aria-label="logo image">
+                              <img src="https://ik.imagekit.io/eluribank/assets/images/logo-final.jpg" width="250" alt="" style="border-radius: 10px;">
+                            </a>
+                          </div>
+                          
+                        <span class="fa fa-bars mobile-nav__toggler"></span>
+                    </div><!-- /.logo-box -->
+                  <!-- /.main-menu__list -->
+
+<ul class="main-menu__list">
+    <li><a href="index.html">Home</a></li>
+    <li class="dropdown">
+        <a href="#">Services</a>
+        <ul>
+            <li><a href="accounts.html">Saving & Current Ac</a></li>
+  
+
+            <li><a href="deposits.html">Fixed Deposits</a></li>
+            <li><a href="loans.html">Loan & Advances</a></li>
+            <li><a href="lockers.html">Lockers</a></li>
+
+<li><a href="mobilebanking.html">Mobile Banking</a></li>
+
+<li><a href="debitcard.html">Debit Card</a></li>
+
+<li><a href="qrsoundbox.html">QR Scanner & Box</a></li>
+
+            <li class="dropdown">
+                 <a href="#">Other Services <span class="arrow-box">&gt;</span></a>
+                <ul>
+                     <li><a href="chequebook.html">Cheque Book</a></li>
+
+<li><a href="demanddraft.html">Demand Draft (DD)</a></li>
+
+<li><a href="payorders.html">Pay Orders</a></li>
+<li><a href="bankguarantees.html">Bank Guarantees</a></li>
+
+ <li><a href="rtgs.html">RTGS & NEFT</a></li>
+                    <li><a href="imps.html">IMPS</a></li>
+
+ <li><a href="upiatm.html">UPI</a></li>
+  
+  
+ 
+ 
+ 
+
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li><a href="events.html">Events</a></li>
+    <li><a href="careers.html">Careers</a></li>
+    <li class="dropdown">
+        <a href="#">Pages</a>
+        <ul>
+            <li><a href="waystobank.html">Ways to Bank</a></li>
+            <li><a href="how-it-works.html">How It Works</a></li>
+            <li><a href="deposit-calculator.html">Deposit Calculator</a></li>
+
+ <li><a href="loan-calculator.html">Loan Calculator</a></li>
+            <li><a href="loan-eligibility.html">Loan Eligibility</a></li>
+          
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+        </ul>
+    </li>
+    <li class="dropdown">
+        <a href="#">About Us</a>
+        <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="team-details.html">Chairman's Desk</a></li>
+            <li><a href="auditandannualreports.html">Audit & Annual Reports</a></li>
+        </ul>
+    </li>
+
+   
+   
+   
+  
+
+ 
+
+ <!-- <li><a href="contact.html">Contact Us</a></li> -->
+   <li ><a href="downloads.html">Downloads</a></li>
+    <li style="list-style: none;">
+      <a href="#" onclick="openLoginForm()" style="
+        display: inline-block;
+        padding: 8px 16px;
+        color: white;
+        border: 2px solid white;
+        background-color: #7d0000;
+        transition: all 0.3s ease;
+        text-decoration: none;
+      "
+      onmouseover="this.style.backgroundColor='#7d0000'; this.style.color='white';" 
+      onmouseout="this.style.backgroundColor='#fde1e0'; this.style.color='#7d0000';">
+        Employee Portal
+      </a>
+    </li>
+    
+   
+</ul>
+ <!-- /.main-menu__list -->
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+                   
+                </div><!-- /.container -->
+            </nav>
+            <!-- /.main-menu -->
+        </header><!-- /.main-header -->
+
+
+
+
+
+
+
+        <div class="slider" style="position: relative; width: 100%; overflow: hidden;">
+          <div class="slides flex transition-transform duration-1000 ease-in-out" style="width: 100%; height: auto;">
+            
+            <!-- ✅ First Slide with Instagram Feed -->
+            <div class="slide" style="flex-shrink: 0; width: 100%; position: relative; display: flex; justify-content: center; align-items: center;">
+              <!-- Background Image -->
+              <img src="https://ik.imagekit.io/eluribank/assets/images/main-slider/reports.png" alt="Banner" style="width: 100%; height: auto; object-fit: cover; display: block;">
+        
+              <!-- Instagram Feed Positioned Right-Center -->
+              <div style="
+                position: absolute;
+                right: 5%;
+                top: 50%;
+                transform: translateY(-50%);
+                z-index: 2;
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                width: 100%;
+                pointer-events: none;
+              ">
+                <div class="taggbox" style="
+                  width: 350px;
+                  max-width: 90vw;
+                  height: 100%;
+                  margin-top: 0;
+                  pointer-events: auto;
+                " data-widget-id="2145017" data-tags="false" data-render-id="root_cGpQC"></div>
+                <script defer src="https://widget.taggbox.com/embed-lite.min.js"></script>
+              </div>
+            </div>
+        
+            <!-- ✅ Second Slide -->
+            <div class="slide" style="flex-shrink: 0; width: 100%; position: relative;">
+              <a href="auditandannualreports.html">
+                <img src="https://ik.imagekit.io/eluribank/assets/images/main-slider/fd.png" alt="Annual Reports Slide" style="width: 100%; height: auto; object-fit: cover; display: block;">
+              </a>
+            </div>
+        
+            <!-- ✅ Other Slides -->
+            <div class="slide" style="flex-shrink: 0; width: 100%; position: relative;">
+              <a href="loans.html">
+                <img src="https://ik.imagekit.io/eluribank/assets/images/main-slider/loan.png" alt="Loan Slide" style="width: 100%; height: auto; object-fit: cover; display: block;">
+              </a>
+            </div>
+        
+            <div class="slide" style="flex-shrink: 0; width: 100%; position: relative;">
+              <a href="lockers.html">
+                <img src="https://ik.imagekit.io/eluribank/assets/images/main-slider/locker.png" alt="Locker Slide" style="width: 100%; height: auto; object-fit: cover; display: block;">
+              </a>
+            </div>
+        
+            <div class="slide" style="flex-shrink: 0; width: 100%; position: relative;">
+              <a href="mobilebanking.html">
+                <img src="https://ik.imagekit.io/eluribank/assets/images/main-slider/mobile.png" alt="Mobile Banking Slide" style="width: 100%; height: auto; object-fit: cover; display: block;">
+              </a>
+            </div>
+        
+          </div>
+        
+          <!-- ✅ Navigation Buttons -->
+          <button class="nav-btn prev" style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%); z-index: 5;">&#10094;</button>
+          <button class="nav-btn next" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); z-index: 5;">&#10095;</button>
+        
+          <!-- ✅ Dots -->
+          <div class="dots" style="text-align: center; position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); z-index: 5;">
+            <span class="dot active" data-index="0"></span>
+            <span class="dot" data-index="1"></span>
+            <span class="dot" data-index="2"></span>
+            <span class="dot" data-index="3"></span>
+            <span class="dot" data-index="4"></span>
+          </div>
+        </div>
+        
+        <!-- ✅ Slider Script -->
+        <script>
+          const slides = document.querySelector('.slides');
+          const slideCount = document.querySelectorAll('.slide').length;
+          const dots = document.querySelectorAll('.dot');
+          let index = 0;
+          let interval = setInterval(nextSlide, 8000);
+        
+          function updateSlide() {
+            slides.style.transform = `translateX(-${index * 100}%)`;
+            dots.forEach(dot => dot.classList.remove('active'));
+            dots[index].classList.add('active');
+          }
+        
+          function nextSlide() {
+            index = (index + 1) % slideCount;
+            updateSlide();
+          }
+        
+          function prevSlide() {
+            index = (index - 1 + slideCount) % slideCount;
+            updateSlide();
+          }
+        
+          document.querySelector('.next').addEventListener('click', () => {
+            nextSlide();
+            resetInterval();
+          });
+        
+          document.querySelector('.prev').addEventListener('click', () => {
+            prevSlide();
+            resetInterval();
+          });
+        
+          dots.forEach(dot => {
+            dot.addEventListener('click', () => {
+              index = parseInt(dot.dataset.index);
+              updateSlide();
+              resetInterval();
+            });
+          });
+        
+          function resetInterval() {
+            clearInterval(interval);
+            interval = setInterval(nextSlide, 8000);
+          }
+        </script>
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+        <!-- <div class="slider-wrapper">
+            <div class="slider-slide active" style="background-image: url('ik.imagekit.io/eluribank/assets/images/main-slider/main-slider-1-1.jpg');"></div>
+            <div class="slider-slide" style="background-image: url('ik.imagekit.io/eluribank/assets/images/main-slider/main-slider-1-2.jpg');"></div>
+            <div class="slider-slide" style="background-image: url('ik.imagekit.io/eluribank/assets/images/main-slider/main-slider-1-1.jpg');"></div>
+            <div class="slider-slide" style="background-image: url('ik.imagekit.io/eluribank/assets/images/main-slider/main-slider-1-2.jpg');"></div>
+            <div class="slider-slide" style="background-image: url('ik.imagekit.io/eluribank/assets/images/main-slider/main-slider-1-1.jpg');"></div>
+          
+           
+            <div class="slider-dots"></div>
+          </div> -->
+          
+
+<!-- deposits start -->
+
+
+        <section class="about-one">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-xl-7">
+                        <div class="about-one__content">
+                            <!-- <p class="mb-4"><span style="color: #7d0000; font-size: large; margin-bottom: 4rem; font-weight: bold;">Eluri Bank</span>  is dedicated to providing innovative financial solutions that empower individuals and businesses to achieve their goals. With a strong commitment to trust, integrity, and customer service, Eluri Bank offers a wide range of banking services tailored to meet the unique needs of its clients.</p> -->
+
+                            <div class="block-title text-left mt-3">
+                                <h2 style="margin-bottom: -1rem; margin-top: -2rem;font-size: 230%; ">Enjoy DICGC-insured Fixed Deposits with high interest returns and trusted banking support for secure way to grow your savings.</h2>
+                            </div><!-- /.block-title -->
+                            <p ><span style="color: #7d0000;"> &nbsp; &nbsp;  Fixed Deposits are not just investments — they're your financial safety net.</span> In times of unexpected emergencies, your FD acts as a secure backup, offering you peace of mind and quick access to funds when you need them most. Build today to safeguard your tomorrow. Our Fixed Deposit Calculator is designed to help you plan and grow your savings with guaranteed returns. Choose from a variety of tenures and interest rates for your financial goals. Make informed investment decisions with ease and confidence.</p>
+
+                        </div><!-- /.about-one__content -->
+                        
+                       <!-- Font Awesome CDN (include in your <head> if not already) -->
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="feature-four__box text-left">
+            <div class="feature-four__box-inner">
+                <div class="feature-four__box-icon">
+                    <i class="fas fa-piggy-bank fa-2x"></i>
+                </div>
+                <div class="feature-four__box-right">
+                    <h3>High Interest Rates</h3>
+                    <p>Earn attractive interest on your Fixed Deposits with flexible tenure options.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-6">
+        <div class="feature-four__box text-left">
+            <div class="feature-four__box-inner">
+                <div class="feature-four__box-icon">
+                    <i class="fas fa-shield-alt fa-2x"></i>
+                </div>
+                <div class="feature-four__box-right">
+                    <h3>Safe & Secure</h3>
+                    <p>Enjoy 100% secure savings backed by Eluri Co-operative Urban Bank’s trust.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="feature-four__box text-left">
+            <div class="feature-four__box-inner">
+                <div class="feature-four__box-icon">
+                    <i class="fas fa-hand-holding-usd fa-2x"></i>
+                </div>
+                <div class="feature-four__box-right">
+                    <h3>DICGC Insurance</h3>
+                    <p>Deposits insured up to ₹5 lakh under DICGC, ensuring peace of mind for your savings.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-6">
+        <div class="feature-four__box text-left">
+            <div class="feature-four__box-inner">
+                <div class="feature-four__box-icon">
+                    <i class="fas fa-user-check fa-2x"></i>
+                </div>
+                <div class="feature-four__box-right">
+                    <h3>Reliable Banking Support</h3>
+                    <p>Experience personalized service and consistent support from our trusted banking team.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+                    </div><!-- /.col-lg-6 -->
+                  
+<div class="col-lg-12 col-xl-5">
+  <form id="deposit-calculator" class="about-one__form">
+    <h3>Deposit Calculator</h3>
+    <div class="about-one__form-content">
+
+      <!-- Deposit Amount -->
+      <div class="input-box__top">
+        <span>₹10,000</span><span>₹1,000,000</span>
+      </div>
+      <div class="input-box">
+        <div id="deposit-amount-slider"></div>
+        <input type="hidden" id="deposit-amount" value="50000">
+      </div>
+
+      <!-- Tenure -->
+      <div class="input-box__top">
+        <span>1 Year</span><span>10 Years</span>
+      </div>
+      <div class="input-box">
+        <div id="deposit-tenure-slider"></div>
+        <input type="hidden" id="deposit-tenure" value="5">
+      </div>
+
+      <!-- Interest Rate -->
+      <div class="input-box__top">
+        <span>1%</span><span>15%</span>
+      </div>
+      <div class="input-box">
+        <div id="deposit-interest-slider"></div>
+        <input type="hidden" id="deposit-interest" value="7">
+      </div>
+
+      <!-- Output -->
+      <p>
+        <span>Monthly Interest</span>
+        <b>₹<i id="deposit-monthly-interest">0</i></b>
+      </p>
+      <p>
+        <span>Total Interest</span>
+        <b>₹<i id="deposit-total-interest">0</i></b>
+      </p>
+      <p>
+        <span>Total Maturity Value</span>
+        <b>₹<i id="deposit-maturity-amount">0</i></b>
+      </p>
+
+      <a id="enquire-btn" href="#" class="thm-btn">
+        Enquire Now &nbsp;
+        <img src="https://img.icons8.com/ios-filled/20/25D366/whatsapp.png" alt="WhatsApp">
+      </a>
+
+    </div>
+  </form>
+</div>
+                      
+                    
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </section><!-- /.about-one -->
+
+        <section class="service-page pt-100 pb-60 " style="margin-top: -3rem;">
+            <div class="container">
+              <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+          
+                  <!-- Slide 1: Short Term Deposit -->
+                  <div class="swiper-slide">
+                    <div class="service-one__card">
+                      <div class="service-one__image">
+                        <a href="short-term-deposit.html">
+                          <div class="post-thumbnail">
+                            <img src="https://ik.imagekit.io/eluribank/assets/images/services/deposits/deposit-short-term.png" alt="Short Term Deposit">
+                          </div>
+                        </a>
+                      </div>
+                      <div class="service-one__content">
+                        <a href="short-term-deposit.html"><div class="service-icon"><i class="fa fa-clock"></i></div></a>
+                        <h3><a href="short-term-deposit.html">Short Term Deposit</a></h3>
+                        <p>Park your funds for short durations and earn higher returns than a savings account, with flexible tenure and assured returns.</p>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px;">
+                          <a href="short-term-deposit.html" class="btn btn-sm btn-outline-primary">Know more</a>
+                          <a href="https://wa.me/917282923737?text=I%20am%20interested%20in%20Short%20Term%20Deposit.%20Please%20assist%20me." class="btn btn-sm btn-primary" target="_blank">Send Request To Us</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+          
+                  <!-- Slide 2: Eluri Deposit -->
+                  <div class="swiper-slide">
+                    <div class="service-one__card">
+                      <div class="service-one__image">
+                        <a href="eluri-special-deposit.html">
+                          <div class="post-thumbnail">
+                            <img src="https://ik.imagekit.io/eluribank/assets/images/services/deposits/deposit-eluri-special.png" alt="Eluri Deposit">
+                          </div>
+                        </a>
+                      </div>
+                      <div class="service-one__content">
+                        <a href="eluri-special-deposit.html"><div class="service-icon"><i class="fa fa-star"></i></div></a>
+                        <h3><a href="eluri-special-deposit.html">Eluri Deposit (ESJD)</a></h3>
+                        <p>Invest once and let your money grow with compounded interest over the long term. Perfect for future goals and wealth creation.</p>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px;">
+                          <a href="eluri-special-deposit.html" class="btn btn-sm btn-outline-primary">Know more</a>
+                          <a href="https://wa.me/917282923737?text=I%20am%20interested%20in%20Eluri%20Deposit.%20Please%20assist%20me." class="btn btn-sm btn-primary" target="_blank">Send Request To Us</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+          
+                  <!-- Slide 3: Recurring Deposit -->
+                  <div class="swiper-slide">
+                    <div class="service-one__card">
+                      <div class="service-one__image">
+                        <a href="recurring-deposit.html">
+                          <div class="post-thumbnail">
+                            <img src="https://ik.imagekit.io/eluribank/assets/images/services/deposits/deposit-recurring.png" alt="Recurring Deposit">
+                          </div>
+                        </a>
+                      </div>
+                      <div class="service-one__content">
+                        <a href="recurring-deposit.html"><div class="service-icon"><i class="fa fa-sync-alt"></i></div></a>
+                        <h3><a href="recurring-deposit.html">Recurring Deposit</a></h3>
+                        <p>Save monthly and consistently build a lump sum over time with attractive interest rates. Ideal for disciplined, long-term saving.</p>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px;">
+                          <a href="recurring-deposit.html" class="btn btn-sm btn-outline-primary">Know more</a>
+                          <a href="https://wa.me/917282923737?text=I%20am%20interested%20in%20Recurring%20Deposit.%20Please%20assist%20me." class="btn btn-sm btn-primary" target="_blank">Send Request To Us</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+          
+                  <!-- Slide 4: Monthly Interest Deposit -->
+                  <div class="swiper-slide">
+                    <div class="service-one__card">
+                      <div class="service-one__image">
+                        <a href="monthly-intrest.html">
+                          <div class="post-thumbnail">
+                            <img src="https://ik.imagekit.io/eluribank/assets/images/services/deposits/monthly-interest-deposit.png" alt="Monthly Interest Deposit">
+                          </div>
+                        </a>
+                      </div>
+                      <div class="service-one__content">
+                        <a href="monthly-intrest.html"><div class="service-icon"><i class="fa fa-calendar-alt"></i></div></a>
+                        <h3 style="white-space: nowrap;"><a href="monthly-intrest.html">Monthly Interest Deposit</a></h3>
+                        <p>Ideal for regular income—earn interest every month while your principal remains secure for the full deposit term.</p>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px;">
+                          <a href="monthly-intrest.html" class="btn btn-sm btn-outline-primary">Know more</a>
+                          <a href="https://wa.me/917282923737?text=I%20am%20interested%20in%20Monthly%20Interest%20Deposit.%20Please%20assist%20me." class="btn btn-sm btn-primary" target="_blank">Send Request To Us</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+          
+                  <!-- Slide 5: 444 Days Silver Deposit (Launching Soon) -->
+                  <div class="swiper-slide">
+                    <div class="service-one__card">
+                      <div class="service-one__image">
+                        <a href="#">
+                          <div class="post-thumbnail">
+                            <img src="https://ik.imagekit.io/eluribank/assets/images/services/deposits/deposit-silver.png" alt="444 Days Silver Deposit">
+                          </div>
+                        </a>
+                      </div>
+                      <div class="service-one__content">
+                        <a href="#"><div class="service-icon"><i class="fa fa-coins"></i></div></a>
+                        <h3 style="white-space: nowrap;"><a href="#">444 Days Silver Deposit</a></h3>
+                        <p>A special fixed deposit scheme for 444 days with attractive returns. Ideal for mid-term wealth growth with flexibility.</p>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px;">
+                          <span class="badge bg-warning text-dark">Launching Soon</span>
+                          <a href="https://wa.me/917282923737?text=I%20have%20a%20query%20about%20444%20Days%20Silver%20Deposit.%20Please%20assist%20me." class="btn btn-sm btn-primary" target="_blank">Send Query</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+          
+                  <!-- Slide 6: 555 Days Gold Deposit (Launching Soon) -->
+                  <div class="swiper-slide">
+                    <div class="service-one__card">
+                      <div class="service-one__image">
+                        <a href="#">
+                          <div class="post-thumbnail">
+                            <img src="https://ik.imagekit.io/eluribank/assets/images/services/deposits/deposit-gold.png" alt="555 Days Gold Deposit">
+                          </div>
+                        </a>
+                      </div>
+                      <div class="service-one__content">
+                        <a href="#"><div class="service-icon"><i class="fa fa-crown"></i></div></a>
+                        <h3><a href="#">555 Days Gold Deposit</a></h3>
+                        <p>Exclusive 555-day deposit plan with premium interest rates. Perfect for customers aiming at higher mid-term returns.</p>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px;">
+                          <span class="badge bg-warning text-dark">Launching Soon</span>
+                          <a href="https://wa.me/917282923737?text=I%20have%20a%20query%20about%20555%20Days%20Gold%20Deposit.%20Please%20assist%20me." class="btn btn-sm btn-primary" target="_blank">Send Query</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+          
+                </div>
+          
+                <!-- Swiper Controls -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+              </div>
+            </div>
+          </section>
+          
+       <!-- deposits end  -->
+        
+
+     
+
+
+
+
+
+<!-- savings start -->
+
+
+
+
+<section class="about-one"  style="background-color: #fde1e0; margin-top: -4rem; ">
+  <div class="container" >
+    <div class="row" >
+        <div class="col-lg-12 ">
+            <div class="about-one__content">
+                <div class="block-title text-left">
+                    <!-- <p>Eluri Bank Services Overview</p> -->
+                    <h2> Secure, Smart, and Premium account services to loyal, long-term customers for their daily financial needs.
+                    </h2> 
+                </div><!-- /.block-title -->
+                <p>At Eluri Bank, we offer a range of reliable and customer-friendly account services to meet your everyday financial needs. Whether you're looking to save for the future or manage daily transactions, our accounts are designed with flexibility and safety in mind.</p>
+               
+            </div><!-- /.about-one__content -->
+        </div><!-- /.col-lg-12 -->
+    </div><!-- /.row -->
+</div><!-- /.container -->
+    <div class="container pb-5"  >
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+  
+          <!-- Slide 1: Digital Savings Account -->
+          <div class="swiper-slide">
+            <div class="service-one__card">
+              <div class="service-one__image">
+                <a href="basicsavings.html">
+                  <div class="post-thumbnail">
+                    <img src="https://ik.imagekit.io/eluribank/assets/images/services/savings/digital-savings-account.png" alt="Digital Savings Account">
+                  </div>
+                </a>
+              </div>
+              <div class="service-one__content">
+                <a href="basicsavings.html"><div class="service-icon"><i class="fa fa-mobile-alt"></i></div></a>
+                <h3 style="white-space: nowrap;"><a href="basicsavings.html">Digital Savings Account</a></h3>
+                <p>Open Digital Savings Account for zero balance requirement, ideal for daily personal savings & simplified banking.</p>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px;">
+                  <a href="basicsavings.html" class="btn btn-sm btn-outline-primary">Know more</a>
+                  <a href="https://wa.me/917282923737?text=Hello%20Eluri%20Cooperative%20Bank%2C%20I%20am%20interested%20in%20a%20Digital%20Savings%20Account.%20Please%20assist%20me." class="btn btn-sm btn-primary" target="_blank">Send Request To Us</a>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Slide 2: Savings Account -->
+          <div class="swiper-slide">
+            <div class="service-one__card">
+              <div class="service-one__image">
+                <a href="savingsaccount.html">
+                  <div class="post-thumbnail">
+                    <img src="https://ik.imagekit.io/eluribank/assets/images/services/savings/savings.png" alt="Savings Account">
+                  </div>
+                </a>
+              </div>
+              <div class="service-one__content">
+                <a href="savingsaccount.html"><div class="service-icon"><i class="fa fa-university"></i></div></a>
+                <h3><a href="savingsaccount.html">Savings Account</a></h3>
+                <p>Grow your savings securely while earning attractive interest rates. Perfect for personal savings with easy access to funds.</p>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px;">
+                  <a href="savingsaccount.html" class="btn btn-sm btn-outline-primary">Know more</a>
+                  <a href="https://wa.me/917282923737?text=Hello%20Eluri%20Cooperative%20Bank%2C%20I%20am%20interested%20in%20opening%20a%20Savings%20Account.%20Please%20assist%20me." class="btn btn-sm btn-primary" target="_blank">Send Request To Us</a>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Slide 3: Salary Account -->
+          <div class="swiper-slide">
+            <div class="service-one__card">
+              <div class="service-one__image">
+                <a href="salaryaccount.html">
+                  <div class="post-thumbnail">
+                    <img src="https://ik.imagekit.io/eluribank/assets/images/services/savings/savings-salary.png" alt="Salary Account">
+                  </div>
+                </a>
+              </div>
+              <div class="service-one__content">
+                <a href="salaryaccount.html"><div class="service-icon"><i class="fa fa-credit-card"></i></div></a>
+                <h3><a href="salaryaccount.html">Salary Account</a></h3>
+                <p>Seamless salary deposits, zero balance and faster access to funds tailored for salaried individuals for convenience.</p>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px;">
+                    <a href="salaryaccount.html" class="btn btn-sm btn-outline-primary">Know more</a>
+                    <a href="https://wa.me/917282923737?text=Hello%20Eluri%20Cooperative%20Bank%2C%20I%20am%20interested%20in%20a%20Salary%20Account.%20Please%20assist%20me." class="btn btn-sm btn-primary" target="_blank">Send Request To Us</a>
+                  </div>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Slide 4: Flexi Savings Account -->
+          <div class="swiper-slide">
+            <div class="service-one__card">
+              <div class="service-one__image">
+                <a href="flexi.html">
+                  <div class="post-thumbnail">
+                    <img src="https://ik.imagekit.io/eluribank/assets/images/services/savings/savings-flexi.png" alt="Flexi Savings Account">
+                  </div>
+                </a>
+              </div>
+              <div class="service-one__content">
+                <a href="flexi.html"><div class="service-icon"><i class="fa fa-exchange-alt"></i></div></a>
+                <h3><a href="flexi.html">Flexi Savings Account</a></h3>
+                <p>Enjoy the flexibility of a savings account with the benefit of fixed deposit returns. Auto-sweep and reverse-sweep to work smart.</p>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px;">
+                  <a href="flexi.html" class="btn btn-sm btn-outline-primary">Know more</a>
+                  <a href="https://wa.me/917282923737?text=Hello%20Eluri%20Cooperative%20Bank%2C%20I%20am%20interested%20in%20a%20Flexi%20Savings%20Account.%20Please%20assist%20me." class="btn btn-sm btn-primary" target="_blank">Send Request To Us</a>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Slide 5: Regular Current Account -->
+          <div class="swiper-slide">
+            <div class="service-one__card">
+              <div class="service-one__image">
+                <a href="currentaccount.html">
+                  <div class="post-thumbnail">
+                    <img src="https://ik.imagekit.io/eluribank/assets/images/services/savings/regualar-current-account.png" alt="Regular Current Account">
+                  </div>
+                </a>
+              </div>
+              <div class="service-one__content">
+                <a href="currentaccount.html"><div class="service-icon"><i class="fa fa-briefcase"></i></div></a>
+                <h3 style="white-space: nowrap;"><a href="currentaccount.html">Regular Current Account</a></h3>
+                <p>Efficient and secure banking for businesses with higher transaction volumes and customized cheque facilities.</p>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px;">
+                  <a href="currentaccount.html" class="btn btn-sm btn-outline-primary">Know more</a>
+                  <a href="https://wa.me/917282923737?text=Hello%20Eluri%20Cooperative%20Bank%2C%20I%20am%20interested%20in%20a%20Regular%20Current%20Account.%20Please%20assist%20me." class="btn btn-sm btn-primary" target="_blank">Send Request To Us</a>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Slide 6: Customised Current Account -->
+          <div class="swiper-slide">
+            <div class="service-one__card">
+              <div class="service-one__image">
+                <a href="customcurrent.html">
+                  <div class="post-thumbnail">
+                    <img src="https://ik.imagekit.io/eluribank/assets/images/services/savings/customised-current-account.png" alt="Customised Current Account">
+                  </div>
+                </a>
+              </div>
+              <div class="service-one__content">
+                <a href="customcurrent.html"><div class="service-icon"><i class="fa fa-cogs"></i></div></a>
+                <h3 style="white-space: nowrap;"><a href="customcurrent.html">Custom Current Account</a></h3>
+                <p>Tailor-made current account solutions for entrepreneurs and SMEs with features aligned to your business scale.</p>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px;">
+                  <a href="customcurrent.html" class="btn btn-sm btn-outline-primary">Know more</a>
+                  <a href="https://wa.me/917282923737?text=Hello%20Eluri%20Cooperative%20Bank%2C%20I%20am%20interested%20in%20a%20Customised%20Current%20Account.%20Please%20assist%20me." class="btn btn-sm btn-primary" target="_blank">Send Request To Us</a>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+        </div>
+  
+        <!-- Swiper Controls -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </section>
+  
+
+
+<!-- savings end -->
+
+
+
+
+<!-- loans start -->
+<section class="about-one" style="margin-top: -4rem;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 ">
+                <div class="about-one__content">
+                    <div class="block-title text-left">
+                        <h2>Continuous support for your needs with reliable "Loan Services" for every stage of your life</h2>
+                    </div><!-- /.block-title -->
+                    <p>At  Eluri Bank, we understand that financial needs change at every stage of life. That’s why we offer a variety of loan solutions to support your personal, professional, and emergency requirements — all with competitive interest rates, flexible tenures, and quick processing.</p>
+                    
+
+
+                </div><!-- /.about-one__content -->
+            </div><!-- /.col-lg-12 -->
+        </div><!-- /.row -->
+    </div><!-- /.container -->
+</section><!-- /.about-one -->
+
+
+
+
+<section class="service-page pt-100 pb-60" style="margin-top: -5rem;"> 
+    <div class="container">
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+  
+          <!-- Slide 1: Home Loan -->
+          <div class="swiper-slide">
+            <div class="service-one__card">
+              <div class="service-one__image">
+                <a href="homeloan.html">
+                  <div class="post-thumbnail">
+                    <img src="https://ik.imagekit.io/eluribank/assets/images/services/loans/home-loan.png" alt="Home Loan">
+                  </div>
+                </a>
+              </div>
+              <div class="service-one__content">
+                <a href="homeloan.html"><div class="service-icon"><i class="fa fa-home"></i></div></a>
+                <h3><a href="homeloan.html">Home Loan</a></h3>
+                <p>Make your dream home a reality with flexible home loans at competitive rates and longer repayment options.</p>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px;">
+                  <a href="homeloan.html" class="btn btn-sm btn-outline-primary">Know more</a>
+                  <a href="https://wa.me/917282923737?text=I%20am%20interested%20in%20a%20Home%20Loan.%20Please%20assist%20me." class="btn btn-sm btn-primary" target="_blank">Send Request To Us</a>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Slide 2: Gold Loan -->
+          <div class="swiper-slide">
+            <div class="service-one__card">
+              <div class="service-one__image">
+                <a href="goldloan.html">
+                  <div class="post-thumbnail">
+                    <img src="https://ik.imagekit.io/eluribank/assets/images/services/loans/gold-loan.png" alt="Gold Loan">
+                  </div>
+                </a>
+              </div>
+              <div class="service-one__content">
+                <a href="goldloan.html"><div class="service-icon"><i class="fa fa-ring"></i></div></a>
+                <h3><a href="goldloan.html">Gold Loan</a></h3>
+                <p>Unlock the value of your gold and get instant funds with our easy and secure gold loan schemes of Eluri Bank.</p>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px;">
+                  <a href="goldloan.html" class="btn btn-sm btn-outline-primary">Know more</a>
+                  <a href="https://wa.me/917282923737?text=I%20am%20interested%20in%20a%20Gold%20Loan.%20Please%20assist%20me." class="btn btn-sm btn-primary" target="_blank">Send Request To Us</a>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Slide 3: Vehicle Loan -->
+          <div class="swiper-slide">
+            <div class="service-one__card">
+              <div class="service-one__image">
+                <a href="vehicle-loan.html">
+                  <div class="post-thumbnail">
+                    <img src="https://ik.imagekit.io/eluribank/assets/images/services/loans/loan-car.png" alt="Vehicle Loan">
+                  </div>
+                </a>
+              </div>
+              <div class="service-one__content">
+                <a href="vehicle-loan.html"><div class="service-icon"><i class="fa fa-car"></i></div></a>
+                <h3><a href="vehicle-loan.html">Vehicle Loan</a></h3>
+                <p>Own your dream vehicle with easy EMIs, quick disbursal, and competitive interest rates with security.</p>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px;">
+                  <a href="vehicle-loan.html" class="btn btn-sm btn-outline-primary">Know more</a>
+                  <a href="https://wa.me/917282923737?text=I%20am%20interested%20in%20a%20Vehicle%20Loan.%20Please%20assist%20me." class="btn btn-sm btn-primary" target="_blank">Send Request To Us</a>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Slide 4: Personal Loan -->
+          <div class="swiper-slide">
+            <div class="service-one__card">
+              <div class="service-one__image">
+                <a href="personal-loan.html">
+                  <div class="post-thumbnail">
+                    <img src="https://ik.imagekit.io/eluribank/assets/images/services/loans/personal-loan.png" alt="Personal Loan">
+                  </div>
+                </a>
+              </div>
+              <div class="service-one__content">
+                <a href="personal-loan.html"><div class="service-icon"><i class="fa fa-user"></i></div></a>
+                <h3><a href="personal-loan.html">Personal Loan</a></h3>
+                <p>Cover our unexpected expenses like medical, travel, or education with fast, hassle-free personal loans with Eluri Bank.</p>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px;">
+                  <a href="personal-loan.html" class="btn btn-sm btn-outline-primary">Know more</a>
+                  <a href="https://wa.me/917282923737?text=I%20am%20interested%20in%20a%20Personal%20Loan.%20Please%20assist%20me." class="btn btn-sm btn-primary" target="_blank">Send Request To Us</a>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Slide 5: Business Loan -->
+          <div class="swiper-slide">
+            <div class="service-one__card">
+              <div class="service-one__image">
+                <a href="business-loan.html">
+                  <div class="post-thumbnail">
+                    <img src="https://ik.imagekit.io/eluribank/assets/images/services/loans/business-loan.png" alt="Business Loan">
+                  </div>
+                </a>
+              </div>
+              <div class="service-one__content">
+                <a href="business-loan.html"><div class="service-icon"><i class="fa fa-briefcase"></i></div></a>
+                <h3><a href="business-loan.html">Business Loan</a></h3>
+                <p>Fuel your business ambitions with customized loans for working capital, expansion, or asset purchase.</p>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px;">
+                  <a href="business-loan.html" class="btn btn-sm btn-outline-primary">Know more</a>
+                  <a href="https://wa.me/917282923737?text=I%20am%20interested%20in%20a%20Business%20Loan.%20Please%20assist%20me." class="btn btn-sm btn-primary" target="_blank">Send Request To Us</a>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Slide 6: Mortgage Loan -->
+          <div class="swiper-slide">
+            <div class="service-one__card">
+              <div class="service-one__image">
+                <a href="mortgage-loan.html">
+                  <div class="post-thumbnail">
+                    <img src="https://ik.imagekit.io/eluribank/assets/images/services/loans/mortgage.png" alt="Mortgage Loan">
+                  </div>
+                </a>
+              </div>
+              <div class="service-one__content">
+                <a href="mortgage-loan.html"><div class="service-icon"><i class="fa fa-building"></i></div></a>
+                <h3><a href="mortgage-loan.html">Mortgage Loan</a></h3>
+                <p>Leverage your property for secured funding with competitive interest and long repayment flexibility with Eluri Bank.</p>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px;">
+                  <a href="mortgage-loan.html" class="btn btn-sm btn-outline-primary">Know more</a>
+                  <a href="https://wa.me/917282923737?text=I%20am%20interested%20in%20a%20Mortgage%20Loan.%20Please%20assist%20me." class="btn btn-sm btn-primary" target="_blank">Send Request To Us</a>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Slide 7: SOD on Property -->
+          <div class="swiper-slide">
+            <div class="service-one__card">
+              <div class="service-one__image">
+                <a href="sod-property.html">
+                  <div class="post-thumbnail">
+                    <img src="https://ik.imagekit.io/eluribank/assets/images/services/loans/sod-on-property.png" alt="Secured Overdraft on Property">
+                  </div>
+                </a>
+              </div>
+              <div class="service-one__content">
+                <a href="sod-property.html"><div class="service-icon"><i class="fa fa-lock"></i></div></a>
+                <h3><a href="sod-property.html">SOD on Property</a></h3>
+                <p>Unlock liquidity against your residential or commercial property. Pay interest only on the amount utilized on sanctioned limit.</p>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px;">
+                  <a href="sod-property.html" class="btn btn-sm btn-outline-primary">Know more</a>
+                  <a href="https://wa.me/917282923737?text=I%20am%20interested%20in%20SOD%20on%20Property.%20Please%20assist%20me." class="btn btn-sm btn-primary" target="_blank">Send Request To Us</a>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Slide 8: SOD on Deposit -->
+          <div class="swiper-slide">
+            <div class="service-one__card">
+              <div class="service-one__image">
+                <a href="sod-on-deposit.html">
+                  <div class="post-thumbnail">
+                    <img src="https://ik.imagekit.io/eluribank/assets/images/services/loans/sod-on-deposit.png" alt="SOD on Deposit">
+                  </div>
+                </a>
+              </div>
+              <div class="service-one__content">
+                <a href="sod-on-deposit.html"><div class="service-icon"><i class="fa fa-database"></i></div></a>
+                <h3><a href="sod-on-deposit.html">SOD on Deposit</a></h3>
+                <p>Get an overdraft facility against your fixed or recurring deposits without breaking them. Quick and easy processing.</p>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px;">
+                  <a href="sod-on-deposit.html" class="btn btn-sm btn-outline-primary">Know more</a>
+                  <a href="https://wa.me/917282923737?text=I%20am%20interested%20in%20SOD%20on%20Deposit.%20Please%20assist%20me." class="btn btn-sm btn-primary" target="_blank">Send Request To Us</a>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Slide 9: SOD on Gold -->
+          <div class="swiper-slide">
+            <div class="service-one__card">
+              <div class="service-one__image">
+                <a href="sod-on-gold.html">
+                  <div class="post-thumbnail">
+                    <img src="https://ik.imagekit.io/eluribank/assets/images/services/loans/sod-on-gold.png" alt="SOD on Gold">
+                  </div>
+                </a>
+              </div>
+              <div class="service-one__content">
+                <a href="sod-on-gold.html"><div class="service-icon"><i class="fa fa-coins"></i></div></a>
+                <h3><a href="sod-on-gold.html">SOD on Gold</a></h3>
+                <p>Avail instant overdraft facility by pledging your gold. Enjoy enhanced liquidity without selling your valuable assets.</p>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px;">
+                  <a href="sod-on-gold.html" class="btn btn-sm btn-outline-primary">Know more</a>
+                  <a href="https://wa.me/917282923737?text=I%20am%20interested%20in%20SOD%20on%20Gold.%20Please%20assist%20me." class="btn btn-sm btn-primary" target="_blank">Send Request To Us</a>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+        </div>
+  
+        <!-- Swiper Controls -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </section>
+  
+<!-- loans end -->
+
+
+        
+     
+      
+        
+
+          <footer class="site-footer" style="background-color: #7d0000; color: white;">
+            <div class="container">
+          
+              <!-- Top Section: About & App Info -->
+              <div class="row justify-content-between" >
+                <!-- Left: About Eluri Bank -->
+                <!-- <div class="col-lg-6 col-md-6">
+                  <div class="footer-widget footer-widget__about">
+                    <h4 style="color: white; font-weight: bold;">
+                      <a href="index.html">
+                        <img src="https://ik.imagekit.io/eluribank/assets/images/logo-light.png" width="45" alt="">
+                      </a> Eluri Co Operative Urban Bank Ltd.
+                    </h4>
+                    <p>
+                      We place the highlights of the Bank’s performance over a period in brief in reference to the rating
+                      procedures being adopted by Reserve Bank of India to the Banking Industry.
+                    </p>
+                  </div>
+                </div> -->
+          
+                <!-- Right: App Download Options -->
+               
+              </div>
+          
+              <!-- Bottom Section: 4 Columns -->
+              <div class="row justify-content-between pt-2">
+                  <!-- Quick Links -->
+                  <div class="col-lg-2 col-sm-6">
+                    <div class="footer-widget footer-widget__link">
+                      <h4 class="footer-widget__title">Quick Links</h4>
+                      <ul class="list-unstyled footer-widget__link-list">
+                          <li><a href="index.html"><i class="fa fa-chevron-right"></i> Home</a></li>
+                          <li><a href="about.html"><i class="fa fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="services.html"><i class="fa fa-chevron-right"></i> Services</a></li>
+                        <li><a href="careers.html"><i class="fa fa-chevron-right"></i> Careers</a></li>
+                       
+                        <li><a href="downloads.html"><i class="fa fa-chevron-right"></i> Downloads</a></li>
+                        <li><a href="contact.html"><i class="fa fa-chevron-right"></i> Contact Us</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  
+                <!-- Services -->
+                <div class="col-lg-2 col-sm-6">
+                  <div class="footer-widget footer-widget__link">
+                    <h4 class="footer-widget__title">Our Services</h4>
+                    <ul class="list-unstyled footer-widget__link-list">
+                      <li><a href="accounts.html"><i class="fa fa-chevron-right"></i> Accounts</a></li>
+                      <li><a href="loans.html"><i class="fa fa-chevron-right"></i> Loans</a></li>
+                      <li><a href="debitcard.html"><i class="fa fa-chevron-right"></i> Debit Card</a></li>
+                      <li><a href="rtgs.html"><i class="fa fa-chevron-right"></i> RTGS</a></li>
+                      <li><a href="lockers.html"><i class="fa fa-chevron-right"></i> Lockers</a></li>
+                      <li><a href="upiatm.html"><i class="fa fa-chevron-right"></i> UPI & ATM</a></li>
+                    </ul>
+                  </div>
+                </div>
+          
+              
+            <!-- downloads -->
+            <div class="col-lg-3 col-sm-6">
+              <div class="footer-widget footer-widget__link">
+                <h4 class="footer-widget__title">Downloads</h4>
+              <ul class="list-unstyled footer-widget__link-list">
+<li><a href="#"><i class="fa fa-chevron-right"></i> Inoperative and Unclaimed Accounts</a></li>
+<li><a href="#"><i class="fa fa-chevron-right"></i> DEAF Account</a></li>
+<li><a href="#"><i class="fa fa-chevron-right"></i> Statutory Audit Policy</a></li>
+<li><a href="#"><i class="fa fa-chevron-right"></i> Customer Grievance Redressal Policy</a></li>
+<li><a href="downloads.html"><i class="fa fa-chevron-right"></i> More Downloads</a></li>
+</ul>
+
+              </div>
+            </div>
+               
+          
+
+              
+                <!-- Contact Info -->
+                <div class="col-lg-4 col-sm-6">
+                  <div >
+                    <div class="footer-widget footer-widget__about">
+                      <h4 style="color: white; font-weight: bold;padding-bottom: 12px;">Install Eluri Bank App</h4>
+                      <p style="margin-bottom: -10px;">Download our mobile banking app for a seamless banking experience.</p>
+                     <div style="display: flex; gap: 15px; align-items: center; flex-wrap: wrap;">
+
+                        <!-- Play Store section -->
+                        <div style="display: flex; flex-direction: column; align-items: center;">
+                          <a href="https://play.google.com/store/apps/details?id=app.imps.eluri" target="_blank">
+                            <img src="https://ik.imagekit.io/eluribank/assets/images/platystore.jpg" alt="Play Store QR Scanner" style="height: 120px; margin-bottom: 5px;">
+                          </a>
+                          <a href="https://play.google.com/store/apps/details?id=app.imps.eluri" target="_blank">
+                            <img src="https://ik.imagekit.io/eluribank/assets/images/platystore.png" alt="Play Store" style="height: 45px; background-color: white; border-radius: 10px; border: 2px solid white;">
+                          </a>
+                        </div>
+                      
+                        <!-- App Store section -->
+                        <div style="display: flex; flex-direction: column; align-items: center;">
+                          <a href="https://apps.apple.com/in/app/eluri-mobile-banking/id6470624783" target="_blank">
+                            <img src="https://ik.imagekit.io/eluribank/assets/images/app-store.jpg" alt="App Store QR Scanner" style="height: 120px; margin-bottom: 5px;">
+                          </a>
+                          <a href="https://apps.apple.com/in/app/eluri-mobile-banking/id6470624783" target="_blank">
+                            <img src="https://ik.imagekit.io/eluribank/assets/images/appstore.png" alt="App Store" style="height: 45px; background-color: white; border-radius: 10px;">
+                          </a>
+                        </div>
+                      
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          
+            </div>
+          </footer>
+
+<!-- Floating Widget -->
+<div class="floating-widget">
+  <div class="launcher-menu" id="launcherMenu">
+    <button class="launcher-btn" onclick="window.open('https://facebook.com', '_blank')"><i class="fab fa-facebook-f"></i></button>
+    <button class="launcher-btn" onclick="window.open('https://instagram.com', '_blank')"><i class="fab fa-instagram"></i></button>
+   <button class="launcher-btn" onclick="window.open('https://wa.me/917282923737', '_blank')"><i class="fab fa-whatsapp-square"></i></button>
+
+    <button class="launcher-btn" onclick="document.getElementById('chatBox').style.display='flex'"><i class="fas fa-comment-dots"></i></button>
+  </div>
+  <div class="launcher-toggle" id="launcherToggle"><i class="fas fa-plus"></i></div>
+</div>
+
+<!-- Chatbot -->
+<div class="chatbot-box" id="chatBox">
+ <div class="chat-header">
+  Eluri Bank Chat Support
+  <span style="float: right; cursor: pointer;" onclick="document.getElementById('chatBox').style.display='none'">&times;</span>
+</div>
+  <div class="chat-body" id="chatBody">
+    <div class="chat-message bot">Hi! I'm Eluri Bot. How can I assist you today?</div>
+  </div>
+  <div class="chat-input-area">
+    <input type="text" id="chatInput" placeholder="Type your message..." onkeypress="if(event.key==='Enter') sendMessage()" />
+    <button onclick="sendMessage()">Send</button>
+  </div>
+</div>
+
+<!-- Support Form Modal -->
+<div class="support-form-modal" id="formModal">
+  <div class="support-form">
+    <h4>Get Support</h4>
+    <input type="text" id="supportName" placeholder="Your Name" required />
+    <input type="email" id="supportEmail" placeholder="Your Email" required />
+    <input type="tel" id="supportPhone" placeholder="Your Phone Number" required />
+    <input type="text" id="supportSubject" placeholder="Subject" required />
+    <textarea id="supportMessage" rows="3" placeholder="Your Message" required></textarea>
+    <button onclick="submitSupportForm()">Submit & WhatsApp</button>
+  </div>
+</div>
+
+<script>
+  // Dummy credentials 😘
+  const validEmail = "care@eluri.com";
+  const validPassword = "12345";
+
+  function openLoginForm() {
+    document.getElementById("loginModal").style.display = "flex";
+  }
+
+  function validateLogin() {
+    const email = document.getElementById("emailInput").value;
+    const password = document.getElementById("passwordInput").value;
+
+    if (email === validEmail && password === validPassword) {
+      // Redirect to portal
+      window.location.href = "employee-portal.html";
+    } else {
+      document.getElementById("loginError").innerText = "Invalid email or password, my cutie 😥";
+    }
+  }
+
+  // Optional: Close on background click
+  window.onclick = function(event) {
+    const modal = document.getElementById("loginModal");
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  };
+</script>
+<div id="loginModal" style="
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+">
+  <div style="
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  ">
+    <h3 style="margin-top: 0;">Login</h3>
+    <input type="email" id="emailInput" placeholder="Email" style="width: 100%; padding: 8px; margin-bottom: 10px;" />
+    <input type="password" id="passwordInput" placeholder="Password" style="width: 100%; padding: 8px; margin-bottom: 10px;" />
+    <button onclick="validateLogin()" style="
+      width: 100%;
+      background-color: #7d0000;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    ">Login</button>
+    <p id="loginError" style="color: red; font-size: 14px; margin-top: 10px;"></p>
+  </div>
+</div>
+
+          
+          
+        
+        <div class="bottom-footer">
+            <div class="container">
+                <p>© Copyright 2025 by Eluri Co-Operative Urban Bank</p>
+                <div class="bottom-footer__social">
+                    <a href="#" class="fab fa-facebook-f"></a>
+                    <a href="#" class="fab fa-twitter"></a>
+                    <a href="#" class="fab fa-pinterest-p"></a>
+                    <a href="#" class="fab fa-instagram"></a>
+                </div><!-- /.bottom-footer__social -->
+            </div><!-- /.container -->
+        </div><!-- /.bottom-footer -->
+
+    </div><!-- /.page-wrapper -->
+
+
+    <div class="mobile-nav__wrapper">
+        <div class="mobile-nav__overlay mobile-nav__toggler"></div>
+        <!-- /.mobile-nav__overlay -->
+        <div class="mobile-nav__content">
+            <span class="mobile-nav__close mobile-nav__toggler"></span>
+            <div class="logo-box">
+                <a href="index.html" aria-label="logo image"><img src="https://ik.imagekit.io/eluribank/assets/images/logo-light.png" width="155" alt="" /></a>
+                
+            </div>
+            <!-- /.logo-box -->
+            <div class="mobile-nav__container"></div>
+            <!-- /.mobile-nav__container -->
+
+            <ul class="mobile-nav__contact list-unstyled">
+                <li>
+                    <i class="fa fa-envelope"></i>
+                    <a href="mailto:needhelp@azino.com">info@eluribank.com</a>
+                </li>
+                <li>
+                    <i class="pylon-icon-telephone"></i>
+                    <a href="tel:+863 - 2230888">(+1) 9812310000</a>
+                </li>
+            </ul><!-- /.mobile-nav__contact -->
+            <div class="mobile-nav__top">
+                <div class="mobile-nav__social">
+                    <a href="#" aria-label="twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="facebook"><i class="fab fa-facebook-square"></i></a>
+                    <a href="#" aria-label="pinterest"><i class="fab fa-pinterest-p"></i></a>
+                    <a href="#" aria-label="instagram"><i class="fab fa-instagram"></i></a>
+                </div><!-- /.mobile-nav__social -->
+            </div><!-- /.mobile-nav__top -->
+
+
+
+        </div>
+        <!-- /.mobile-nav__content -->
+    </div>
+    <!-- /.mobile-nav__wrapper -->
+
+    <div class="search-popup">
+        <div class="search-popup__overlay search-toggler"></div>
+        <!-- /.search-popup__overlay -->
+        <div class="search-popup__content">
+            <form action="#">
+                <label for="search" class="sr-only">search here</label><!-- /.sr-only -->
+                <input type="text" id="search" placeholder="Search Here..." />
+                <button type="submit" aria-label="search submit" class="thm-btn">
+                    <i class="fa fa-search"></i>
+                </button>
+            </form>
+        </div>
+        <!-- /.search-popup__content -->
+    </div>
+    <!-- /.search-popup -->
+
+    <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
+
+
+    <script src="assets/js/chatbot.js"></script>
+
+ <script src="assets/js/jquery-3.5.1.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/swiper.min.js"></script>
+    <script src="assets/js/jquery.ajaxchimp.min.js"></script>
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/jquery.validate.min.js"></script>
+    <script src="assets/js/bootstrap-select.min.js"></script>
+    <script src="assets/js/wow.js"></script>
+    <script src="assets/js/odometer.min.js"></script>
+    <script src="assets/js/jquery.appear.min.js"></script>
+    <script src="assets/js/wNumb.min.js"></script>
+    <script src="assets/js/nouislider.min.js"></script>
+
+
+    <!-- template js -->
+    <script src="assets/js/theme.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const slides = document.querySelectorAll(".slider-slide");
+          const dotsContainer = document.querySelector(".slider-dots");
+          let currentIndex = 0;
+      
+          slides.forEach((_, i) => {
+            const dot = document.createElement("span");
+            dot.addEventListener("click", () => showSlide(i));
+            dotsContainer.appendChild(dot);
+          });
+      
+          const dots = dotsContainer.querySelectorAll("span");
+      
+          function showSlide(index) {
+            slides.forEach((slide, i) => {
+              slide.classList.toggle("active", i === index);
+              dots[i].classList.toggle("active", i === index);
+            });
+            currentIndex = index;
+          }
+      
+          function nextSlide() {
+            showSlide((currentIndex + 1) % slides.length);
+          }
+      
+          function prevSlide() {
+            showSlide((currentIndex - 1 + slides.length) % slides.length);
+          }
+      
+          document.querySelector(".slider-btn.next").addEventListener("click", nextSlide);
+          document.querySelector(".slider-btn.prev").addEventListener("click", prevSlide);
+      
+          showSlide(0); // Initial render
+        });
+      </script>
+<!-- deposit calculator script -->
+<!-- Scripts -->
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.0/nouislider.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wnumb/1.2.0/wNumb.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const amountSlider = document.getElementById('deposit-amount-slider');
+    const tenureSlider = document.getElementById('deposit-tenure-slider');
+    const interestSlider = document.getElementById('deposit-interest-slider');
+
+    noUiSlider.create(amountSlider, {
+      start: 50000,
+      connect: [true, false],
+      range: { min: 10000, max: 1000000 },
+      step: 1000,
+      tooltips: true,
+      format: wNumb({ decimals: 0, prefix: '₹' })
+    }).on('update', function (values) {
+      document.getElementById('deposit-amount').value = values[0].replace(/[₹,]/g, '');
+      calculateDeposit();
+    });
+
+    noUiSlider.create(tenureSlider, {
+      start: 5,
+      connect: [true, false],
+      range: { min: 1, max: 10 },
+      step: 1,
+      tooltips: true,
+      format: wNumb({ decimals: 0, suffix: ' years' })
+    }).on('update', function (values) {
+      document.getElementById('deposit-tenure').value = values[0].replace(/[^\d.]/g, '');
+      calculateDeposit();
+    });
+
+    noUiSlider.create(interestSlider, {
+      start: 7,
+      connect: [true, false],
+      range: { min: 1, max: 15 },
+      step: 0.1,
+      tooltips: true,
+      format: wNumb({ decimals: 1, suffix: '%' })
+    }).on('update', function (values) {
+      document.getElementById('deposit-interest').value = values[0].replace(/[^\d.]/g, '');
+      calculateDeposit();
+    });
+
+    function calculateDeposit() {
+      const principal = parseFloat(document.getElementById('deposit-amount').value);
+      const years = parseFloat(document.getElementById('deposit-tenure').value);
+      const rate = parseFloat(document.getElementById('deposit-interest').value);
+
+      if (!principal || !years || !rate) return;
+
+      const maturity = principal * Math.pow((1 + rate / 100), years);
+      const interest = maturity - principal;
+      const monthlyInterest = interest / (years * 12);
+
+      document.getElementById('deposit-total-interest').innerText = interest.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      document.getElementById('deposit-maturity-amount').innerText = maturity.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      document.getElementById('deposit-monthly-interest').innerText = monthlyInterest.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
+    document.getElementById('enquire-btn').addEventListener('click', function (e) {
+      e.preventDefault();
+
+      const principal = Number(document.getElementById('deposit-amount').value).toLocaleString();
+      const tenure = document.getElementById('deposit-tenure').value;
+      const interestRate = document.getElementById('deposit-interest').value;
+      const totalInterest = document.getElementById('deposit-total-interest').innerText;
+      const monthlyInterest = document.getElementById('deposit-monthly-interest').innerText;
+      const maturity = document.getElementById('deposit-maturity-amount').innerText;
+
+      const message = 
+`Hi Eluri Bank 👋,
+
+I'm interested in opening a deposit plan with the following details:
+
+💰 *Deposit Amount:* ₹${principal}
+📅 *Tenure:* ${tenure} years
+📈 *Interest Rate:* ${interestRate}%
+📊 *Monthly Interest:* ₹${monthlyInterest}
+💸 *Total Interest:* ₹${totalInterest}
+🏦 *Maturity Amount:* ₹${maturity}
+
+Please get in touch with me for the next steps. 😊`;
+
+const waLink = `https://wa.me/917282923737?text=${encodeURIComponent(message)}`;
+window.open(waLink, '_blank');
+
+    });
+
+    calculateDeposit();
+  });
+</script>
+
+<!-- Swiper JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<!-- Swiper Initialization -->
+<script>
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      loop: true,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      breakpoints: {
+        768: {
+          slidesPerView: 2,
+        },
+        992: {
+          slidesPerView: 3,
+        },
+        1200: {
+          slidesPerView: 4,
+        }
+
+      }
+    });
+  </script>
+        
+</body>
+
+</html>

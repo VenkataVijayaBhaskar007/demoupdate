@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Employee Portal Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', sans-serif; background: #f9f9f9; display: flex; flex-direction: column; min-height: 100vh; }
+    .container { display: flex; flex: 1; }
+    .sidebar {
+      width: 260px;
+      background: #7d0000;
+      color: white;
+      padding: 2rem 1.5rem;
+      box-shadow: 2px 0 15px rgba(0,0,0,0.1);
+    }
+    .sidebar h2 { font-size: 1.5rem; margin-bottom: 2rem; }
+    .nav-link {
+      display: flex; align-items: center;
+      margin-bottom: 1rem; color: white;
+      text-decoration: none; padding: 0.5rem;
+      border-radius: 6px; cursor: pointer;
+      transition: background 0.2s;
+    }
+    .nav-link:hover, .nav-link.active { background: #4f1010; }
+    .nav-link i { margin-right: 0.8rem; }
+    .main { flex: 1; padding: 2rem; }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+    .top-bar {
+      display: flex; flex-wrap: wrap;
+      justify-content: space-between; align-items: center;
+      margin-bottom: 2rem;
+    }
+    .card {
+      background: white; border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      margin-bottom: 1rem;
+    }
+    .calendar-iframe, .sheet-iframe {
+      width: 100%; height: 400px;
+      border: none; border-radius: 12px;
+    }
+    .downloads-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    .download-card {
+      background-color: white;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+    .download-card h3 { margin: 0.5rem 0; }
+    .download-card a {
+      display: inline-block;
+      margin-top: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: #7d0000;
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+    @media (max-width: 768px) {
+      .container { flex-direction: column; }
+      .sidebar { width: 100%; padding: 1rem; text-align: center; }
+      .nav-link { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="loginModal" style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 9999; display: flex; justify-content: center; align-items: center;">
+  <div style="background-color: white; padding: 20px; border-radius: 10px; width: 300px; box-shadow: 0 0 10px rgba(0,0,0,0.3);">
+    <h3 style="margin-top: 0;">Login</h3>
+    <input type="email" id="emailInput" placeholder="Email" style="width: 100%; padding: 8px; margin-bottom: 10px;" />
+    <input type="password" id="passwordInput" placeholder="Password" style="width: 100%; padding: 8px; margin-bottom: 10px;" />
+    <button onclick="validateLogin()" style="width: 100%; background-color: #7d0000; color: white; padding: 10px; border: none; border-radius: 5px; cursor: pointer;">Login</button>
+    <p id="loginError" style="color: red; font-size: 14px; margin-top: 10px;"></p>
+  </div>
+</div>
+
+<div class="container" id="appContainer" style="display:none">
+  <div class="sidebar">
+    <img src="./ik.imagekit.io/eluribank/assets/images/logo-dark.png" alt="Employee Portal Logo" style="width: 200px; margin-bottom: 2rem;border-radius: 20px;" />
+    <div class="nav-link active" data-tab="dashboard"><i class="fa-solid fa-chart-line"></i>Dashboard</div>
+    <div class="nav-link" data-tab="reports"><i class="fa-solid fa-chart-pie"></i>Reports</div>
+    <div class="nav-link" data-tab="documents"><i class="fa-solid fa-folder"></i>Documents</div>
+    <div class="nav-link" data-tab="rbi"><i class="fa-solid fa-building-columns"></i>RBI Circulars</div>
+    <div class="nav-link" data-tab="forms"><i class="fa-solid fa-file-circle-plus"></i>Opening Forms</div>
+    <div class="nav-link" data-tab="policies"><i class="fa-solid fa-scale-balanced"></i>Policies</div>
+    <div class="nav-link" data-tab="trainings"><i class="fa-solid fa-chalkboard-user"></i>Trainings</div>
+    <div class="nav-link" data-tab="about"><i class="fa-solid fa-user"></i>About</div>
+  </div>
+
+  <div class="main">
+    <!-- Dashboard -->
+    <div id="dashboard" class="tab-content active">
+      <div class="top-bar">
+        <h3>Hello <span id="userName">User</span>, <span id="greeting"></span></h3>
+        <p><span id="dateTime"></span></p>
+      </div>
+      <div class="card"><h4>Calendar</h4><iframe class="calendar-iframe" src="https://calendar.google.com/calendar/embed?src=en.indian%23holiday%40group.v.calendar.google.com&ctz=Asia%2FKolkata"></iframe></div>
+      <div class="card"><h4>Attendance</h4><a href="https://sohcm.com/SmartApp" target="_blank">update your attendance</a></div>
+      <div class="card"><h4>Events</h4><a href="https://docs.google.com/spreadsheets/d/e/YOUR_SHEET_LINK/pubhtml" target="_blank">View Event Sheet</a></div>
+      <div class="card"><h4>Hi, <span id="userGreeting"></span>!</h4><p>Welcome to your dashboard.</p></div>
+      <div class="card"><h4>Live Clock</h4><p id="liveClock">Loading time...</p></div>
+      <div class="card"><h4>Current Weather</h4><p id="weatherInfo">Loading weather...</p></div>
+      <div class="card"><h4>Top News Headlines</h4><ul id="newsList" style="padding-left: 1rem;"><li>Loading headlines...</li></ul></div>
+    </div>
+
+    <!-- Reports -->
+    <div id="reports" class="tab-content">
+      <div class="card">
+        <h4>Reports</h4>
+        <iframe class="sheet-iframe" src="https://docs.google.com/spreadsheets/d/e/YOUR_SHEET_LINK/pubhtml?widget=true&amp;headers=false"></iframe>
+      </div>
+    </div>
+
+    <!-- Documents -->
+    <div id="documents" class="tab-content">
+      <section class="service-details">
+        <div class="downloads-grid">
+          <div class="download-card"><i class="fa-solid fa-file-lines"></i><h3>Account Opening Form</h3><a href="files/Account_Opening_Form.pdf" download>Download PDF</a></div>
+          <div class="download-card" style="background: linear-gradient(135deg,#4f1010 0%, #7d0000 100%); color: white;"><i class="fa-solid fa-piggy-bank"></i><h3>Savings Account Details</h3><a href="files/Savings_Account_Details.pdf" download style="background:white; color:#7d0000;">Download PDF</a></div>
+          <div class="download-card"><i class="fa-solid fa-file-invoice"></i><h3>Bank Statement Request</h3><a href="files/Bank_Statement_Request.pdf" download>Download PDF</a></div>
+          <div class="download-card"><i class="fa-solid fa-file-zipper"></i><h3>E-Statement Viewer</h3><a href="files/E-Statement_Viewer.zip" download>Download ZIP</a></div>
+          <div class="download-card"><i class="fa-solid fa-chart-line"></i><h3>Annual Report 2024</h3><a href="files/Annual_Report_2024.pdf" download>Download PDF</a></div>
+          <div class="download-card"><i class="fa-solid fa-file-signature"></i><h3>Loan Application Form</h3><a href="files/Loan_Application_Form.pdf" download>Download PDF</a></div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Trainings -->
+    <div id="trainings" class="tab-content">
+      <div class="card">
+        <h4>Trainings</h4>
+        <p>Enhance your knowledge with our curated training sessions. Stay up-to-date with industry trends and regulations.</p>
+        <iframe class="sheet-iframe" src="https://docs.google.com/spreadsheets/d/e/YOUR_TRAININGS_SHEET_LINK/pubhtml?widget=true&amp;headers=false"></iframe>
+      </div>
+    </div>
+
+    <!-- About -->
+    <div id="about" class="tab-content"></div>
+
+    <!-- RBI Circulars -->
+    <div id="rbi" class="tab-content">
+      <div class="card">
+        <h4>RBI Circulars</h4>
+        <p>The Reserve Bank of India (RBI) issues regular circulars to guide and regulate banking activities across the country. These circulars ensure uniform practices, promote transparency, and enhance the overall health of the financial system. Stay updated with the latest RBI guidelines relevant to banking professionals and institutions.</p>
+        <ul>
+          <li><a href="files/RBI_Circular_April2024.pdf" download>RBI Circular – April 2024</a></li>
+          <li><a href="files/RBI_Circular_March2024.pdf" download>RBI Circular – March 2024</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Opening Forms -->
+    <div id="forms" class="tab-content">
+      <div class="card">
+        <h4>Opening Forms</h4>
+        <ul>
+          <li><a href="files/KYC_Update_Form.pdf" download>KYC Update Form</a></li>
+          <li><a href="files/New_Credit_Card_Form.pdf" download>Credit Card Application Form</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Policies -->
+    <div id="policies" class="tab-content">
+      <div class="card">
+        <h4>Company Policies</h4>
+        <p>Our policies serve as a foundation for transparent, ethical, and secure banking operations. From privacy practices to customer service and grievance redressal, each policy reflects our commitment to accountability and regulatory compliance. Please ensure you're familiar with them as part of your professional responsibilities.</p>
+        <ul>
+          <li><a href="files/Privacy_Policy.pdf" download>Privacy Policy</a></li>
+          <li><a href="files/Code_of_Conduct.pdf" download>Employee Code of Conduct</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const validUsers = [
+    { email: "care@eluri.com", password: "12345", name: "User1" },
+    { email: "user2@example.com", password: "abc123", name: "User2" },
+    { email: "admin@example.com", password: "admin", name: "User3" },
+    { email: "guest@example.com", password: "guest", name: "User4" }
+  ];
+
+  window.onload = () => {
+    document.getElementById("loginModal").style.display = "flex";
+  };
+
+  function validateLogin() {
+    const email = document.getElementById("emailInput").value;
+    const password = document.getElementById("passwordInput").value;
+    const user = validUsers.find(u => u.email === email && u.password === password);
+    if (user) {
+      localStorage.setItem("username", user.name);
+      document.getElementById("userName").innerText = user.name;
+      document.getElementById("userGreeting").innerText = user.name;
+      document.getElementById("loginModal").style.display = "none";
+      document.getElementById("appContainer").style.display = "flex";
+      document.getElementById("about").innerHTML = `<div class='card'><h4>Welcome, ${user.name}</h4><p>Eluri Bank is dedicated to providing innovative financial solutions that empower individuals and businesses to achieve their goals... (rest unchanged)</p></div>`;
+      updateDateTime();
+      fetchWeather();
+      fetchNews();
+    } else {
+      document.getElementById("loginError").innerText = "Invalid email or password.";
+    }
+  }
+
+  function updateDateTime() {
+    const now = new Date();
+    const userName = localStorage.getItem("username") || "User";
+    document.getElementById("userName").innerText = userName;
+    document.getElementById("userGreeting").innerText = userName;
+    document.getElementById("dateTime").innerText = now.toLocaleString('en-IN', {
+      weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute:'2-digit'
+    });
+    const hour = now.getHours();
+    let greeting = hour < 12 ? "Good Morning" : hour < 18 ? "Good Afternoon" : "Good Evening";
+    document.getElementById("greeting").innerText = greeting;
+  }
+
+  function fetchWeather() {
+    const lat = 17.385, lon = 78.4867;
+    fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true`)
+      .then(res => res.json())
+      .then(data => {
+        const weather = data.current_weather;
+        document.getElementById("weatherInfo").innerText = `Temperature: ${weather.temperature}°C, Wind: ${weather.windspeed} km/h`;
+      }).catch(() => {
+        document.getElementById("weatherInfo").innerText = "Weather unavailable.";
+      });
+  }
+
+  function fetchNews() {
+    fetch("https://api.rss2json.com/v1/api.json?rss_url=https://news.google.com/rss?hl=en-IN&gl=IN&ceid=IN:en")
+      .then(res => res.json())
+      .then(data => {
+        const list = document.getElementById("newsList");
+        list.innerHTML = "";
+        data.items.slice(0, 5).forEach(item => {
+          const li = document.createElement("li");
+          li.innerHTML = `<a href="${item.link}" target="_blank">${item.title}</a>`;
+          list.appendChild(li);
+        });
+      })
+      .catch(() => {
+        document.getElementById("newsList").innerHTML = "<li>Unable to load news.</li>";
+      });
+  }
+
+  setInterval(() => {
+    const now = new Date();
+    const clock = document.getElementById("liveClock");
+    if (clock) clock.innerText = now.toLocaleTimeString();
+  }, 1000);
+
+  const navLinks = document.querySelectorAll('.nav-link');
+  const tabs = document.querySelectorAll('.tab-content');
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.forEach(l => l.classList.remove('active'));
+      tabs.forEach(tab => tab.classList.remove('active'));
+      link.classList.add('active');
+      document.getElementById(link.dataset.tab).classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>

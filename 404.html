@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>404 Page Not Found</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <link rel="preload" as="image" href="/ik.imagekit.io/eluribank/assets/images/404.png">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #220000;
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: row;
+      max-width: 1000px;
+      width: 100%;
+      gap: 30px;
+      align-items: center;
+      justify-content: center;
+      animation: fadeIn 1.2s ease;
+      flex-wrap: wrap;
+      min-height: 500px;
+    }
+
+    .left {
+      flex: 1;
+      text-align: left;
+      animation: slideLeft 1s ease;
+      animation-delay: 0.2s;
+      animation-fill-mode: both;
+      order: 1;
+    }
+
+    .right {
+      flex: 1;
+      text-align: center;
+      position: relative;
+      animation: slideRight 1s ease;
+      animation-delay: 0.2s;
+      animation-fill-mode: both;
+      order: 2;
+    }
+
+    .error-code {
+      font-size: 100px;
+      font-weight: 900;
+      color: #7d0000;
+    }
+
+    h2 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 16px;
+      color: #cccccc;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: #7d0000;
+      padding: 12px 20px;
+      border-radius: 5px;
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #a00000;
+      transform: scale(1.05);
+    }
+
+    .floating-img {
+      animation: floatUpDown 4s ease-in-out infinite;
+      max-width: 100%;
+      width: 350px;
+      height: auto;
+      border-radius: 10px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .shadow-base {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 180px;
+      height: 25px;
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 50%;
+      filter: blur(4px);
+      z-index: 1;
+    }
+
+    /* Floating animation */
+    @keyframes floatUpDown {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+      100% { transform: translateY(0); }
+    }
+
+    /* Entry animations */
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: scale(0.98); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes slideLeft {
+      0% { transform: translateX(-50px); opacity: 0; }
+      100% { transform: translateX(0); opacity: 1; }
+    }
+
+    @keyframes slideRight {
+      0% { transform: translateX(50px); opacity: 0; }
+      100% { transform: translateX(0); opacity: 1; }
+    }
+
+    /* Responsive layout */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .left, .right {
+        width: 100%;
+      }
+
+      .left {
+        order: 2;
+      }
+
+      .right {
+        order: 1;
+      }
+
+      .error-code {
+        font-size: 70px;
+      }
+
+      h2 {
+        font-size: 22px;
+      }
+
+      .shadow-base {
+        width: 120px;
+        height: 20px;
+      }
+
+      .floating-img {
+        width: 250px;
+      }
+    }
+
+    /* Hide paragraph under 600px */
+    @media (max-width: 600px) {
+      p {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="right">
+      <!-- Shadow base (fixed) -->
+      <div class="shadow-base"></div>
+      <!-- Floating image -->
+      <img
+        src="/ik.imagekit.io/eluribank/assets/images/404.png"
+        alt="Piggy Bank"
+        class="floating-img"
+        width="350"
+        height="350"
+      >
+    </div>
+
+    <div class="left">
+      <div class="error-code">4🐷4</div>
+      <h2>Oops, the page you are looking for can’t be found.</h2>
+      <p>Sorry! Either you mistyped the URL or the page has been moved. Let’s get you back on track 🐷💔</p>
+      <a href="/index.html" class="btn">Return to Home Page</a>
+    </div>
+  </div>
+</body>
+</html>

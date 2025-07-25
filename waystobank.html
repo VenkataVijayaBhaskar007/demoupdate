@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eluri Co-Operative Urban Bank</title>
+    <!-- favicons Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="https://ik.imagekit.io/eluribank/assets/images/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://ik.imagekit.io/eluribank/assets/images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://ik.imagekit.io/eluribank/assets/images/favicons/favicon-16x16.png">
+    <meta name="description" content="Pylon Loan HTML Template">
+
+    <!-- fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/css/swiper.min.css">
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <link rel="stylesheet" href="assets/css/pylon-icons.css">
+    <link rel="stylesheet" href="assets/css/odometer.min.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="assets/css/nouislider.min.css">
+    <link rel="stylesheet" href="assets/css/nouislider.pips.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/flaticon.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <!-- template styles -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <style>
+        .service-card {
+          border: 2px solid #7d0000;
+          border-radius: 16px;
+          transition: all 0.3s ease-in-out;
+          padding: 20px;
+          background-color: #fff;
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .service-card:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 8px 20px rgba(117, 19, 35, 0.15);
+          background-color: #7d0000;
+        }
+        
+        .service-card:hover h5,
+        .service-card:hover p,
+        .service-card:hover li,
+        .service-card:hover a {
+          color: white;
+        }
+        
+        .service-card:hover .read-more,
+        .service-card:hover a.badge {
+          border: 2px solid white;
+          color: white !important;
+          background-color: transparent;
+        }
+        .service-icon{
+            background-color: #7d0000;
+        }
+        .service-icon i {
+          font-size: 36px;
+          color: white;
+          transition: color 0.3s ease;
+        }
+        
+        .service-card:hover .service-icon  {
+          color: #7d0000;
+          background-color: white;
+          border: 3px solid #7d0000;
+          border-radius: 50%;
+         
+        }
+        .service-card:hover i{
+            color: #7d0000;
+        }
+        
+        .read-more {
+          display: inline-block;
+          margin-top: 15px;
+          font-weight: 600;
+          background-color: #7d0000;
+          color: white;
+          padding: 10px 15px;
+          border-radius: 5rem;
+          text-decoration: none;
+          transition: transform 0.3s ease, color 0.3s ease;
+        }
+        
+        .read-more:hover {
+          transform: scale(1.05);
+          color: #fff;
+        }
+        .service-card li > a {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.service-card li > a:hover {
+  transform: scale(1.05);
+}
+
+        
+        .badge-primary {
+          background-color: #7d0000;
+          color: white;
+          margin-right: 5px;
+          font-size: 0.8rem;
+          padding: 5px 10px;
+          border-radius: 5rem;
+          text-decoration: none;
+          transition: all 0.3s ease;
+        }
+
+
+
+
+
+
+
+
+        /* Style for the li icons */
+.service-card li i.li-icon {
+  color: #7d0000;
+  border-radius: 50%;
+  font-size: 10px;
+  margin-right: 8px;
+  padding: 6px;
+  border: 1px solid white;
+  background-color: #f5f5f5;
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+/* Style for the link inside li */
+.service-card li  {
+
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect */
+.service-card li :hover {
+  transform: scale(1.05);
+  
+}
+.service-card li i {
+  color: #7d0000;
+  border-radius: 50%;
+  font-size: 10px;
+  margin-right: 8px;
+  padding: 6px;
+  border: 1px solid #7d0000;
+  background-color: #f5f5f5;
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4px;
+}
+
+/* Optional: icon color change on hover */
+.service-card:hover li i {
+  border-color: #fff;
+  color: #7d0000;
+}
+
+
+
+
+
+
+
+
+
+
+.modal-header {
+      background: linear-gradient(135deg, maroon, #7d0000);
+      
+    }
+    .form-check-label {
+      margin-right: 10px;
+    }
+    .form-label {
+      font-weight: 500;
+    }
+    .modal-content {
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+
+        </style>
+        
+</head>
+
+<body>
+       <div class="preloader">
+        <img class="preloader__image" src="https://ik.imagekit.io/eluribank/assets/images/loader.gif" alt=""><br>
+        <p class="preloader-text">Your Trusted Banking Partner...</p>
+      </div><!-- /.preloader -->
+    <div class="page-wrapper">
+        <header class="main-header" >
+           
+            <nav class="main-menu"style="background-color: #fde1e0;" >
+                <div class="container" style="margin: 0px -5px;">
+                    <div class="logo-box">
+                        <div style="display: flex; align-items: center; gap: 5px;">
+                            <a href="index.html" aria-label="logo image">
+                              <img src="https://ik.imagekit.io/eluribank/assets/images/logo-light.png" width="70" alt="" style="border-radius: 10px;">
+                            </a>
+                            <a href="index.html" aria-label="logo image">
+                              <img src="https://ik.imagekit.io/eluribank/assets/images/logo-final.jpg" width="250" alt="" style="border-radius: 10px;">
+                            </a>
+                          </div>
+                          
+                        <span class="fa fa-bars mobile-nav__toggler"></span>
+                    </div><!-- /.logo-box -->
+                  <!-- /.main-menu__list -->
+
+<ul class="main-menu__list">
+    <li><a href="index.html">Home</a></li>
+    <li class="dropdown">
+        <a href="#">Services</a>
+        <ul>
+            <li><a href="accounts.html">Saving & Current Ac</a></li>
+  
+
+            <li><a href="deposits.html">Fixed Deposits</a></li>
+            <li><a href="loans.html">Loan & Advances</a></li>
+            <li><a href="lockers.html">Lockers</a></li>
+
+<li><a href="mobilebanking.html">Mobile Banking</a></li>
+
+<li><a href="debitcard.html">Debit Card</a></li>
+
+<li><a href="qrsoundbox.html">QR Scanner & Box</a></li>
+
+            <li class="dropdown">
+                 <a href="#">Other Services <span class="arrow-box">&gt;</span></a>
+                <ul>
+                     <li><a href="chequebook.html">Cheque Book</a></li>
+
+<li><a href="demanddraft.html">Demand Draft (DD)</a></li>
+
+<li><a href="payorders.html">Pay Orders</a></li>
+<li><a href="bankguarantees.html">Bank Guarantees</a></li>
+
+ <li><a href="rtgs.html">RTGS & NEFT</a></li>
+                    <li><a href="imps.html">IMPS</a></li>
+
+ <li><a href="upiatm.html">UPI</a></li>
+  
+  
+ 
+ 
+ 
+
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li><a href="events.html">Events</a></li>
+    <li><a href="careers.html">Careers</a></li>
+    <li class="dropdown">
+        <a href="#">Pages</a>
+        <ul>
+            <li><a href="waystobank.html">Ways to Bank</a></li>
+            <li><a href="how-it-works.html">How It Works</a></li>
+            <li><a href="deposit-calculator.html">Deposit Calculator</a></li>
+
+ <li><a href="loan-calculator.html">Loan Calculator</a></li>
+            <li><a href="loan-eligibility.html">Loan Eligibility</a></li>
+          
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+        </ul>
+    </li>
+    <li class="dropdown">
+        <a href="#">About Us</a>
+        <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="team-details.html">Chairman's Desk</a></li>
+            <li><a href="auditandannualreports.html">Audit & Annual Reports</a></li>
+        </ul>
+    </li>
+
+   
+   
+   
+  
+
+ 
+
+ <!-- <li><a href="contact.html">Contact Us</a></li> -->
+   <li ><a href="downloads.html">Downloads</a></li>
+    <li style="list-style: none;">
+      <a href="#" onclick="openLoginForm()" style="
+        display: inline-block;
+        padding: 8px 16px;
+        color: white;
+        border: 2px solid white;
+        background-color: #7d0000;
+        transition: all 0.3s ease;
+        text-decoration: none;
+      "
+      onmouseover="this.style.backgroundColor='#7d0000'; this.style.color='white';" 
+      onmouseout="this.style.backgroundColor='#fde1e0'; this.style.color='#7d0000';">
+        Employee Portal
+      </a>
+    </li>
+    
+   
+</ul>
+ <!-- /.main-menu__list -->
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+                   
+                </div><!-- /.container -->
+            </nav>
+            <!-- /.main-menu -->
+        </header><!-- /.main-header -->
+
+        <div class="stricky-header stricked-menu main-menu main-menu__three">
+            <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
+        </div><!-- /.stricky-header -->
+
+        <section class="page-header" >
+          <!-- /.page-header__bg -->
+          <div class="container" >
+              <!-- <ul class="thm-breadcrumb list-unstyled">
+                  <li><a href="index.html">Home</a></li>
+                  <li>/</li>
+                  <li><span>Services</span></li>
+              </ul> -->
+              <h2 style="margin-top: -2rem;">Ways to Bank</h2>
+              <p style="color: white; margin-top: 15px; font-size: x-large; margin-bottom: -2rem;">Convenient, connected, and always within reach.</p>
+
+          </div><!-- /.container -->
+      </section><!-- /.page-header -->
+        
+        <section class="service-details pb-50" style="margin-top: -4rem;">
+            <div class="container">
+                <div class="block-title text-center pt-50 pb-50">
+                    <p>Ways to Bank</p>
+                    <h2>Ways to Handle Your Finances With Eluri Bank</h2>
+                  </div>
+              <div class="row gy-4">
+ <!-- Branch Banking Card -->
+ <div class="col-lg-4 col-md-6">
+  <div class="card h-100 service-card">
+    <div class="card-body">
+      <div class="service-icon mb-3">
+        <i class="fas fa-university"></i>
+      </div>
+      <h5 class="card-title">Branch Banking</h5>
+      <p class="card-text">
+        Enjoy Any Branch Banking (ABB) with Eluri Bank. Access your account from any Eluri Bank branch with ease.
+      </p>
+      <ul class="list-unstyled small">
+        <li><i class="fas fa-chevron-right me-2" ></i><a  href="branches.html"> Find Branch</a></li>
+        <li><i class="fas fa-chevron-right me-2" ></i><a  href="lockers.html"> Locker Facility</a></li>
+      </ul>
+      <a href="branches.html" class="read-more">Read More </a>
+    </div>
+  </div>
+</div>
+
+
+                <!-- Mobile Banking Card -->
+                <div class="col-lg-4 col-md-6">
+                  <div class="card h-100 service-card">
+                    <div class="card-body">
+                      <div class="service-icon mb-3">
+                        <i class="fa fa-mobile-alt"></i>
+                      </div>
+                      <h5 class="card-title">Mobile Banking</h5>
+                      <p class="card-text">
+                        Access your account, transfer funds, pay bills, book tickets, and more with the Eluri Bank Mobile Application.
+                        <br>  <p style="margin-top: -5px; font-weight: 500;">Download Our Mobile App:</p> 
+                      </p>
+                    
+                      <p style="margin-top: -10px;">
+                        
+                        <a href="https://play.google.com/store/apps/details?id=com.Elurimobile.main&pli=1" class="badge badge-pill badge-primary">Google Play</a>
+                        <a href="https://play.google.com/store/apps/details?id=com.Elurimobile.main&pli=1" class="badge badge-pill badge-primary">App Store</a>
+                      </p>
+                      <a href="https://play.google.com/store/apps/details?id=app.imps.eluri" class="read-more">Read More </a>
+                    </div>
+                  </div>
+                </div>
+          
+               
+          
+                <!-- Other Channels Card -->
+                <div class="col-lg-4 col-md-6">
+                  <div class="card h-100 service-card">
+                    <div class="card-body">
+                      <div class="service-icon mb-3">
+                        <i class="fas fa-network-wired"></i>
+                      </div>
+                      <h5 class="card-title">Other Channels</h5>
+                      <ul class="list-unstyled small mb-3">
+                        <!-- <li><i class="fas fa-chevron-right me-2" ></i><a href="branches.html">Find Branch</a></li> -->
+                        <!-- <li><i class="fas fa-chevron-right me-2" ></i><a href="lockers.html">Locker Facility</a></li> -->
+                        <li><i class="fas fa-chevron-right me-2" ></i><a href="debitcard.html">ATM </a></li>
+                        <li><i class="fas fa-chevron-right me-2" ></i><a href="upiatm.html">UPI</a></li>
+                        <li><i class="fas fa-chevron-right me-2" ></i><a href="index.html">Our Website</a></li>
+                        <li>
+                          <i class="fas fa-chevron-right me-2"></i>
+                          <a href="mailto:care@eluribank.com">care@eluribank.com</a>
+                        </li>
+                        <li>
+                          <i class="fas fa-chevron-right me-2"></i>
+                          <a href="#" data-bs-toggle="modal" data-bs-target="#whatsappModal">Whatsapp Banking</a>
+                        </li>
+                      </ul>
+                     
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          
+        
+          
+    
+
+    
+
+
+
+          <footer class="site-footer" style="background-color: #7d0000; color: white;">
+            <div class="container">
+          
+              <!-- Top Section: About & App Info -->
+              <div class="row justify-content-between" >
+                <!-- Left: About Eluri Bank -->
+                <!-- <div class="col-lg-6 col-md-6">
+                  <div class="footer-widget footer-widget__about">
+                    <h4 style="color: white; font-weight: bold;">
+                      <a href="index.html">
+                        <img src="https://ik.imagekit.io/eluribank/assets/images/logo-light.png" width="45" alt="">
+                      </a> Eluri Co Operative Urban Bank Ltd.
+                    </h4>
+                    <p>
+                      We place the highlights of the Bank’s performance over a period in brief in reference to the rating
+                      procedures being adopted by Reserve Bank of India to the Banking Industry.
+                    </p>
+                  </div>
+                </div> -->
+          
+                <!-- Right: App Download Options -->
+               
+              </div>
+          
+              <!-- Bottom Section: 4 Columns -->
+              <div class="row justify-content-between pt-2">
+                  <!-- Quick Links -->
+                  <div class="col-lg-2 col-sm-6">
+                    <div class="footer-widget footer-widget__link">
+                      <h4 class="footer-widget__title">Quick Links</h4>
+                      <ul class="list-unstyled footer-widget__link-list">
+                          <li><a href="index.html"><i class="fa fa-chevron-right"></i> Home</a></li>
+                          <li><a href="about.html"><i class="fa fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="services.html"><i class="fa fa-chevron-right"></i> Services</a></li>
+                        <li><a href="careers.html"><i class="fa fa-chevron-right"></i> Careers</a></li>
+                       
+                        <li><a href="downloads.html"><i class="fa fa-chevron-right"></i> Downloads</a></li>
+                        <li><a href="contact.html"><i class="fa fa-chevron-right"></i> Contact Us</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  
+                <!-- Services -->
+                <div class="col-lg-2 col-sm-6">
+                  <div class="footer-widget footer-widget__link">
+                    <h4 class="footer-widget__title">Our Services</h4>
+                    <ul class="list-unstyled footer-widget__link-list">
+                      <li><a href="accounts.html"><i class="fa fa-chevron-right"></i> Accounts</a></li>
+                      <li><a href="loans.html"><i class="fa fa-chevron-right"></i> Loans</a></li>
+                      <li><a href="debitcard.html"><i class="fa fa-chevron-right"></i> Debit Card</a></li>
+                      <li><a href="rtgs.html"><i class="fa fa-chevron-right"></i> RTGS</a></li>
+                      <li><a href="lockers.html"><i class="fa fa-chevron-right"></i> Lockers</a></li>
+                      <li><a href="upiatm.html"><i class="fa fa-chevron-right"></i> UPI & ATM</a></li>
+                    </ul>
+                  </div>
+                </div>
+          
+              
+            <!-- downloads -->
+            <div class="col-lg-3 col-sm-6">
+              <div class="footer-widget footer-widget__link">
+                <h4 class="footer-widget__title">Downloads</h4>
+              <ul class="list-unstyled footer-widget__link-list">
+<li><a href="#"><i class="fa fa-chevron-right"></i> Inoperative and Unclaimed Accounts</a></li>
+<li><a href="#"><i class="fa fa-chevron-right"></i> DEAF Account</a></li>
+<li><a href="#"><i class="fa fa-chevron-right"></i> Statutory Audit Policy</a></li>
+<li><a href="#"><i class="fa fa-chevron-right"></i> Customer Grievance Redressal Policy</a></li>
+<li><a href="downloads.html"><i class="fa fa-chevron-right"></i> More Downloads</a></li>
+</ul>
+
+              </div>
+            </div>
+               
+          
+
+              
+                <!-- Contact Info -->
+                <div class="col-lg-4 col-sm-6">
+                  <div >
+                    <div class="footer-widget footer-widget__about">
+                      <h4 style="color: white; font-weight: bold;padding-bottom: 12px;">Install Eluri Bank App</h4>
+                      <p style="margin-bottom: -10px;">Download our mobile banking app for a seamless banking experience.</p>
+                     <div style="display: flex; gap: 15px; align-items: center; flex-wrap: wrap;">
+
+                        <!-- Play Store section -->
+                        <div style="display: flex; flex-direction: column; align-items: center;">
+                          <a href="https://play.google.com/store/apps/details?id=app.imps.eluri" target="_blank">
+                            <img src="https://ik.imagekit.io/eluribank/assets/images/platystore.jpg" alt="Play Store QR Scanner" style="height: 120px; margin-bottom: 5px;">
+                          </a>
+                          <a href="https://play.google.com/store/apps/details?id=app.imps.eluri" target="_blank">
+                            <img src="https://ik.imagekit.io/eluribank/assets/images/platystore.png" alt="Play Store" style="height: 45px; background-color: white; border-radius: 10px; border: 2px solid white;">
+                          </a>
+                        </div>
+                      
+                        <!-- App Store section -->
+                        <div style="display: flex; flex-direction: column; align-items: center;">
+                          <a href="https://apps.apple.com/in/app/eluri-mobile-banking/id6470624783" target="_blank">
+                            <img src="https://ik.imagekit.io/eluribank/assets/images/app-store.jpg" alt="App Store QR Scanner" style="height: 120px; margin-bottom: 5px;">
+                          </a>
+                          <a href="https://apps.apple.com/in/app/eluri-mobile-banking/id6470624783" target="_blank">
+                            <img src="https://ik.imagekit.io/eluribank/assets/images/appstore.png" alt="App Store" style="height: 45px; background-color: white; border-radius: 10px;">
+                          </a>
+                        </div>
+                      
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          
+            </div>
+          </footer>
+
+<!-- Floating Widget -->
+<div class="floating-widget">
+  <div class="launcher-menu" id="launcherMenu">
+    <button class="launcher-btn" onclick="window.open('https://facebook.com', '_blank')"><i class="fab fa-facebook-f"></i></button>
+    <button class="launcher-btn" onclick="window.open('https://instagram.com', '_blank')"><i class="fab fa-instagram"></i></button>
+   <button class="launcher-btn" onclick="window.open('https://wa.me/917282923737', '_blank')"><i class="fab fa-whatsapp-square"></i></button>
+
+    <button class="launcher-btn" onclick="document.getElementById('chatBox').style.display='flex'"><i class="fas fa-comment-dots"></i></button>
+  </div>
+  <div class="launcher-toggle" id="launcherToggle"><i class="fas fa-plus"></i></div>
+</div>
+
+<!-- Chatbot -->
+<div class="chatbot-box" id="chatBox">
+ <div class="chat-header">
+  Eluri Bank Chat Support
+  <span style="float: right; cursor: pointer;" onclick="document.getElementById('chatBox').style.display='none'">&times;</span>
+</div>
+  <div class="chat-body" id="chatBody">
+    <div class="chat-message bot">Hi! I'm Eluri Bot. How can I assist you today?</div>
+  </div>
+  <div class="chat-input-area">
+    <input type="text" id="chatInput" placeholder="Type your message..." onkeypress="if(event.key==='Enter') sendMessage()" />
+    <button onclick="sendMessage()">Send</button>
+  </div>
+</div>
+
+<!-- Support Form Modal -->
+<div class="support-form-modal" id="formModal">
+  <div class="support-form">
+    <h4>Get Support</h4>
+    <input type="text" id="supportName" placeholder="Your Name" required />
+    <input type="email" id="supportEmail" placeholder="Your Email" required />
+    <input type="tel" id="supportPhone" placeholder="Your Phone Number" required />
+    <input type="text" id="supportSubject" placeholder="Subject" required />
+    <textarea id="supportMessage" rows="3" placeholder="Your Message" required></textarea>
+    <button onclick="submitSupportForm()">Submit & WhatsApp</button>
+  </div>
+</div>
+
+<script>
+  // Dummy credentials 😘
+  const validEmail = "care@eluri.com";
+  const validPassword = "12345";
+
+  function openLoginForm() {
+    document.getElementById("loginModal").style.display = "flex";
+  }
+
+  function validateLogin() {
+    const email = document.getElementById("emailInput").value;
+    const password = document.getElementById("passwordInput").value;
+
+    if (email === validEmail && password === validPassword) {
+      // Redirect to portal
+      window.location.href = "employee-portal.html";
+    } else {
+      document.getElementById("loginError").innerText = "Invalid email or password, my cutie 😥";
+    }
+  }
+
+  // Optional: Close on background click
+  window.onclick = function(event) {
+    const modal = document.getElementById("loginModal");
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  };
+</script>
+<div id="loginModal" style="
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+">
+  <div style="
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  ">
+    <h3 style="margin-top: 0;">Login</h3>
+    <input type="email" id="emailInput" placeholder="Email" style="width: 100%; padding: 8px; margin-bottom: 10px;" />
+    <input type="password" id="passwordInput" placeholder="Password" style="width: 100%; padding: 8px; margin-bottom: 10px;" />
+    <button onclick="validateLogin()" style="
+      width: 100%;
+      background-color: #7d0000;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    ">Login</button>
+    <p id="loginError" style="color: red; font-size: 14px; margin-top: 10px;"></p>
+  </div>
+</div>
+
+        <div class="bottom-footer">
+            <div class="container">
+                <p>© Copyright 2025 by Eluri Co-Operative Urban Bank</p>
+                <div class="bottom-footer__social">
+                    <a href="#" class="fab fa-facebook-f"></a>
+                    <a href="#" class="fab fa-twitter"></a>
+                    <a href="#" class="fab fa-pinterest-p"></a>
+                    <a href="#" class="fab fa-instagram"></a>
+                </div><!-- /.bottom-footer__social -->
+            </div><!-- /.container -->
+        </div><!-- /.bottom-footer -->
+
+    </div><!-- /.page-wrapper -->
+
+
+    <div class="mobile-nav__wrapper">
+        <div class="mobile-nav__overlay mobile-nav__toggler"></div>
+        <!-- /.mobile-nav__overlay -->
+        <div class="mobile-nav__content">
+            <span class="mobile-nav__close mobile-nav__toggler"></span>
+
+            <div class="logo-box">
+                <a href="index.html" aria-label="logo image"><img src="https://ik.imagekit.io/eluribank/assets/images/logo-light.png" width="155" alt="" /></a>
+            </div>
+            <!-- /.logo-box -->
+            <div class="mobile-nav__container"></div>
+            <!-- /.mobile-nav__container -->
+
+            <ul class="mobile-nav__contact list-unstyled">
+                <li>
+                    <i class="fa fa-envelope"></i>
+                    <a href="mailto:needhelp@azino.com">info@eluribank.com</a>
+                </li>
+                <li>
+                    <i class="fa fa-phone"></i>
+                    <a href="tel:7282923737">+91 72 82 92 37 37</a>
+                </li>
+            </ul><!-- /.mobile-nav__contact -->
+            <div class="mobile-nav__top">
+            
+                <div class="mobile-nav__social">
+                    <a href="#" aria-label="twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="facebook"><i class="fab fa-facebook-square"></i></a>
+                    <a href="#" aria-label="pinterest"><i class="fab fa-pinterest-p"></i></a>
+                    <a href="#" aria-label="instagram"><i class="fab fa-instagram"></i></a>
+                </div><!-- /.mobile-nav__social -->
+            </div><!-- /.mobile-nav__top -->
+
+
+
+        </div>
+        <!-- /.mobile-nav__content -->
+    </div>
+    <!-- /.mobile-nav__wrapper -->
+
+    <div class="search-popup">
+        <div class="search-popup__overlay search-toggler"></div>
+        <!-- /.search-popup__overlay -->
+        <div class="search-popup__content">
+            <form action="#">
+                <label for="search" class="sr-only">search here</label><!-- /.sr-only -->
+                <input type="text" id="search" placeholder="Search Here..." />
+                <button type="submit" aria-label="search submit" class="thm-btn">
+                    <i class="fa fa-search"></i>
+                </button>
+            </form>
+        </div>
+        <!-- /.search-popup__content -->
+    </div>
+    <!-- /.search-popup -->
+
+    <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
+
+
+    <script src="assets/js/chatbot.js"></script>
+
+ <script src="assets/js/jquery-3.5.1.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/swiper.min.js"></script>
+    <script src="assets/js/jquery.ajaxchimp.min.js"></script>
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/jquery.validate.min.js"></script>
+    <script src="assets/js/bootstrap-select.min.js"></script>
+    <script src="assets/js/wow.js"></script>
+    <script src="assets/js/odometer.min.js"></script>
+    <script src="assets/js/jquery.appear.min.js"></script>
+    <script src="assets/js/wNumb.min.js"></script>
+    <script src="assets/js/nouislider.min.js"></script>
+
+    <!-- template js -->
+    <script src="assets/js/theme.js"></script>
+
+    <div class="modal fade" id="whatsappModal" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content p-3" style="background-color: #fde1e0;">
+          <div class="modal-header">
+            <h5 class="modal-title" style="color: white;">WhatsApp Banking Inquiry</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <form id="whatsappForm">
+              <div class="mb-3">
+                <label class="form-label">Full Name</label>
+                <input type="text" class="form-control" name="fullName" required>
+              </div>
+    
+              <div class="mb-3">
+                <label class="form-label">Phone Number</label>
+                <input type="tel" class="form-control" name="phone" required>
+              </div>
+    
+              <div class="mb-3">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-control" name="email" required>
+              </div>
+    
+              <div class="mb-3">
+                <label class="form-label">Customer Type</label><br>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="customerType" value="Existing Customer" id="existingCustomerRadio" required>
+                  <label class="form-check-label" for="existingCustomerRadio">Existing</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="customerType" value="New Customer" id="newCustomerRadio" required>
+                  <label class="form-check-label" for="newCustomerRadio">New</label>
+                </div>
+              </div>
+    
+              <!-- Account Number Input (for Existing Customers) -->
+              <div class="mb-3 d-none" id="accountNumberContainer">
+                <label class="form-label">Account Number</label>
+                <input type="text" class="form-control" name="accountNumber" id="accountNumberInput" placeholder="Enter Account Number">
+              </div>
+    
+              <div class="mb-3">
+                <label class="form-label">Query Regarding</label>
+                <select class="form-select" name="query" id="querySelect" required>
+                  <option value="" disabled selected>Select a service</option>
+                  <option value="Saving Account">Saving Account</option>
+                  <option value="Current Account">Current Account</option>
+                  <option value="Fixed Deposit">Fixed Deposit</option>
+                  <option value="Loans">Loans</option>
+                  <option value="Locker">Locker</option>
+                  <option value="Mobile App">Mobile App</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+    
+              <div class="mb-3 d-none" id="otherInputContainer">
+                <label class="form-label">Please specify</label>
+                <input type="text" class="form-control" name="otherQuery" id="otherQueryInput">
+              </div>
+    
+              <!-- Optional Subject / Message -->
+              <div class="mb-3" id="userMessageContainer">
+                <label class="form-label">Subject / Message (Optional)</label>
+                <input type="text" class="form-control" name="userMessage" id="userMessageInput" placeholder="Enter subject or message (optional)">
+              </div>
+    
+              <div class="text-end">
+                <button type="submit" class="btn btn-success">Submit & Go to WhatsApp</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      const form = document.getElementById('whatsappForm');
+      const querySelect = document.getElementById('querySelect');
+      const otherContainer = document.getElementById('otherInputContainer');
+      const otherInput = document.getElementById('otherQueryInput');
+      const accountNumberContainer = document.getElementById('accountNumberContainer');
+      const accountNumberInput = document.getElementById('accountNumberInput');
+      const existingRadio = document.getElementById('existingCustomerRadio');
+      const newRadio = document.getElementById('newCustomerRadio');
+      const userMessageInput = document.getElementById('userMessageInput');
+    
+      // Show/hide the "Other" input
+      querySelect.addEventListener('change', () => {
+        const isOther = querySelect.value === 'Other';
+        otherContainer.classList.toggle('d-none', !isOther);
+        otherInput.required = isOther;
+      });
+    
+      // Show/hide the "Account Number" input
+      const toggleAccountNumberField = () => {
+        const isExisting = existingRadio.checked;
+        accountNumberContainer.classList.toggle('d-none', !isExisting);
+        accountNumberInput.required = isExisting;
+      };
+    
+      existingRadio.addEventListener('change', toggleAccountNumberField);
+      newRadio.addEventListener('change', toggleAccountNumberField);
+    
+      // Form Submission
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+    
+        if (!form.checkValidity()) {
+          form.reportValidity();
+          return;
+        }
+    
+        const data = new FormData(form);
+        const fullName = data.get('fullName');
+        const phone = data.get('phone');
+        const email = data.get('email');
+        const customerType = data.get('customerType');
+        const querySelected = data.get('query');
+        const query = querySelected === 'Other' ? data.get('otherQuery') : querySelected;
+        const accountNumber = data.get('accountNumber');
+        const userMessage = (data.get('userMessage') || '').trim();
+    
+        if (querySelected === 'Other' && !query.trim()) {
+          alert("Please specify your query.");
+          otherInput.focus();
+          return;
+        }
+    
+        if (customerType === 'Existing Customer' && !accountNumber.trim()) {
+          alert("Please enter your account number.");
+          accountNumberInput.focus();
+          return;
+        }
+    
+        let message = `Hello, I would like to inquire through WhatsApp Banking.\n\n` +
+    `🔹 Name: ${fullName}\n` +
+    `🔹 Phone: ${phone}\n` +
+    `🔹 Email: ${email}\n` +
+    `🔹 Customer Type: ${customerType}\n`;
+    
+        if (customerType === 'Existing Customer') {
+          message += `🔹 Account Number: ${accountNumber}\n`;
+        }
+    
+        message += `🔹 Query Regarding: ${query}`;
+    
+        if (userMessage) {
+          message += `\n🔹 Message: ${userMessage}`;
+        }
+    
+        const encodedMsg = encodeURIComponent(message);
+        const whatsappURL = `https://wa.me/917282923737?text=${encodedMsg}`;
+        window.open(whatsappURL, '_blank');
+      });
+    </script>
+    
+    
+    
+</body>
+
+</html>
